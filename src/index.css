@@ -5253,12 +5253,12 @@
   --background: radial-gradient(ellipse at top, #0f0f1a 0%, #05050a 100%);
   --background-secondary: radial-gradient(ellipse at bottom, #1a1a2e 0%, #0f0f1a 100%);
   --foreground: #fff;
-  --glass-bg: #ffffff0d;
+  --glass-bg: #ffffff1a;
   /* --glass-bg: #0000001a; */
   /* --glass-border: #ffffff1a; */
   --glass-border: #ffffff1a;
   --glass-hover: #ffffff14;
-  --glass-backdrop: blur(10px);
+  --glass-backdrop: blur(20px);
   --neon-teal: #0ff;
   --neon-purple: #8b5cf6;
   --neon-blue: #3b82f6;

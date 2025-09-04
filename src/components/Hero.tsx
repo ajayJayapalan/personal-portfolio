@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
+import DynamicText from "./custom/DynamicText";
+import AuroraTextEffect from "./custom/AuroraText";
 
 export function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -244,21 +246,22 @@ export function Hero() {
               >
                 <motion.span
                   className="block text-transparent bg-gradient-to-r from-cyan-400 via-sky-400 via-blue-400 via-indigo-400 to-purple-400 bg-clip-text"
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
+                  // animate={{
+                  //   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  // }}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
                     ease: "linear",
                   }}
-                  style={{
-                    backgroundSize: "300% 300%",
-                    filter:
-                      "drop-shadow(0 0 35px rgba(0,255,255,0.35)) drop-shadow(0 0 25px rgba(150,100,255,0.3))",
-                  }}
+                  // style={{
+                  //   backgroundSize: "300% 300%",
+                  //   filter:
+                  //     "drop-shadow(0 0 35px rgba(0,255,255,0.35)) drop-shadow(0 0 25px rgba(150,100,255,0.3))",
+                  // }}
                 >
-                  Ajay
+                  {/* Ajay */}
+                  <AuroraTextEffect />
                 </motion.span>
 
                 <motion.span
@@ -268,6 +271,7 @@ export function Hero() {
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
                   Jayapalan.
+                  {/* <AuroraTextEffect /> */}
                 </motion.span>
               </motion.h1>
 
@@ -275,7 +279,7 @@ export function Hero() {
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 1.5, delay: 1.2 }}
-                className="h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent max-w-md mb-8 ml-0 mr-auto"
+                className="h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent max-w-md mt-3 mb-5 ml-0 mr-auto"
               ></motion.div>
 
               <motion.p
@@ -284,7 +288,8 @@ export function Hero() {
                 transition={{ duration: 0.8, delay: 1.4 }}
                 className="text-xl md:text-2xl text-white/70 font-light tracking-wide"
               >
-                Senior React Developer
+                <DynamicText />
+                {/* Senior React Developer. */}
               </motion.p>
             </motion.div>
 
@@ -298,7 +303,7 @@ export function Hero() {
               <Button
                 size="lg"
                 onClick={() => scrollToSection("projects")}
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-semibold px-8 md:px-10 py-3 md:py-4 neon-glow transition-all duration-300 border-0 rounded-full group text-sm md:text-base"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-light tracking-widest px-8 md:px-10 py-3 md:py-4 neon-glow transition-all duration-300 border-0 rounded-full group text-sm md:text-base"
               >
                 Explore Work
                 <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
@@ -365,151 +370,87 @@ type Props = {
   text: string;
 };
 
-function AuroraText({ text }: Props) {
+function GlowingDivider({
+  duration = 1.5,
+  delay = 1.2,
+  maxWidth = "max-w-md",
+  glowColor = "rgba(34,211,238,1)",
+  rightExtend = "220%",
+}) {
   return (
-    <div className="relative grid place-items-center min-h-[200px] w-full bg-black text-white overflow-hidden">
-      {/* Styles from the original pen adapted to component scope */}
+    <div
+      className={`relative ${maxWidth} mb-8 ml-0 mr-auto`}
+      style={{ height: 24 /* gives room for the glow vertically */ }}
+      aria-hidden="true"
+    >
+      {/* Big soft glow that extends to the right */}
+      <div
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 z-0 pointer-events-none"
+        style={{
+          width: rightExtend,
+          height: 32,
+          filter: "blur(28px)",
+          opacity: 0.55,
+          transformOrigin: "left center",
+          // gradient that is stronger in the center-left and fades rightwards
+          background: `linear-gradient(90deg, transparent 0%, rgba(0,0,0,0) 5%, ${glowColor} 15%, ${glowColor} 45%, rgba(255,255,255,0) 100%)`,
+          // let it overflow visually to the right
+          right: "auto",
+        }}
+      />
+
+      {/* Narrower sharper glow directly under the line (subtle halo) */}
+      <div
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 pointer-events-none"
+        style={{
+          width: "120%",
+          height: 8,
+          filter: "blur(10px)",
+          opacity: 0.85,
+          background: `linear-gradient(90deg, transparent 0%, ${glowColor} 20%, ${glowColor} 80%, transparent 100%)`,
+        }}
+      />
+
+      {/* The actual thin animated divider (on top) */}
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        transition={{ duration, delay, ease: "easeOut" }}
+        className="relative z-20 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
+        style={{
+          // keep the visible line crisp and slightly brighter than the glow
+          boxShadow: `0 0 6px 1px rgba(0,0,0,0)`,
+        }}
+      />
+
+      {/* small animated shimmer that travels from left to right (optional) */}
+      <div
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 z-30 pointer-events-none"
+        style={{
+          width: "28%",
+          height: 2,
+          marginLeft: "-2px",
+          background:
+            "linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent)",
+          filter: "blur(6px)",
+          opacity: 0.75,
+          animation: "shimmer 2.4s linear infinite",
+        }}
+      />
+
       <style>{`
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
-
-        :root{
-          --bg: #000000;
-          --clr-1: #00c2ff;
-          --clr-2: #33ff8c;
-          --clr-3: #ffc640;
-          --clr-4: #e54cff;
-          --blur: 1rem;
+        @keyframes shimmer {
+          0% { transform: translateX(-8%); opacity: 0; }
+          10% { opacity: 0.7; }
+          50% { transform: translateX(110%); opacity: 0.6; }
+          100% { transform: translateX(220%); opacity: 0; }
         }
 
-        .aurora-wrap {
-          position: relative;
-          display: inline-block;
-          text-align: center;
-          font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-        }
-
-        .aurora-title {
-          font-size: clamp(2rem, 8vw, 5rem);
-          font-weight: 800;
-          letter-spacing: clamp(-1.75px, -0.25vw, -3.5px);
-          position: relative;
-          overflow: hidden;
-          margin: 0;
-          z-index: 10;
-          background: var(--bg);
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
-
-        .aurora {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 2;
-          mix-blend-mode: darken;
-          pointer-events: none;
-        }
-
-        .aurora__item {
-          overflow: hidden;
-          position: absolute;
-          width: 60vw;
-          height: 60vw;
-          background-color: var(--clr-1);
-          border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
-          filter: blur(var(--blur));
-          mix-blend-mode: overlay;
-          transform-origin: center;
-        }
-
-        .aurora__item:nth-of-type(1) {
-          top: -50%;
-          left: 0%;
-          animation: aurora-border 6s ease-in-out infinite,
-                     aurora-1 12s ease-in-out infinite alternate;
-        }
-        .aurora__item:nth-of-type(2) {
-          background-color: var(--clr-3);
-          right: 0;
-          top: 0;
-          animation: aurora-border 6s ease-in-out infinite,
-                     aurora-2 12s ease-in-out infinite alternate;
-        }
-        .aurora__item:nth-of-type(3) {
-          background-color: var(--clr-2);
-          left: 0;
-          bottom: 0;
-          animation: aurora-border 6s ease-in-out infinite,
-                     aurora-3 8s ease-in-out infinite alternate;
-        }
-        .aurora__item:nth-of-type(4) {
-          background-color: var(--clr-4);
-          right: 0;
-          bottom: -50%;
-          animation: aurora-border 6s ease-in-out infinite,
-                     aurora-4 24s ease-in-out infinite alternate;
-        }
-
-        @keyframes aurora-1 {
-          0%   { top: 0; right: 0; transform: rotate(0deg) scale(1); }
-          50%  { top: 100%; right: 75%; transform: rotate(10deg) scale(1.05); }
-          75%  { top: 100%; right: 25%; transform: rotate(-6deg) scale(0.98); }
-          100% { top: 0; right: 0; transform: rotate(0deg) scale(1); }
-        }
-        @keyframes aurora-2 {
-          0%   { top: -50%; left: 0%; transform: rotate(0deg) scale(1); }
-          60%  { top: 100%; left: 75%; transform: rotate(8deg) scale(1.03); }
-          85%  { top: 100%; left: 25%; transform: rotate(-5deg) scale(0.97); }
-          100% { top: -50%; left: 0%; transform: rotate(0deg) scale(1); }
-        }
-        @keyframes aurora-3 {
-          0%   { bottom: 0; left: 0; transform: rotate(0deg) scale(1); }
-          40%  { bottom: 100%; left: 75%; transform: rotate(-8deg) scale(1.04); }
-          65%  { bottom: 40%; left: 50%; transform: rotate(6deg) scale(0.99); }
-          100% { bottom: 0; left: 0; transform: rotate(0deg) scale(1); }
-        }
-        @keyframes aurora-4 {
-          0%   { bottom: -50%; right: 0; transform: rotate(0deg) scale(1); }
-          50%  { bottom: 0%; right: 40%; transform: rotate(-7deg) scale(1.02); }
-          90%  { bottom: 50%; right: 25%; transform: rotate(5deg) scale(0.97); }
-          100% { bottom: -50%; right: 0; transform: rotate(0deg) scale(1); }
-        }
-
-        @keyframes aurora-border {
-          0%   { border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%; }
-          25%  { border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%; }
-          50%  { border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%; }
-          75%  { border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%; }
-          100% { border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%; }
-        }
-
-        /* Make sure aurora doesn't overflow on small screens */
-        @media (max-width: 640px) {
-          .aurora__item { width: 120vw; height: 120vw; }
+        /* Responsive tweak if the container is small */
+        @media (max-width: 420px) {
+          .${maxWidth} { height: 18px; }
         }
       `}</style>
-
-      <div className="aurora-wrap">
-        {/* animated glowing blobs behind the text */}
-        <div className="aurora" aria-hidden>
-          <div className="aurora__item" />
-          <div className="aurora__item" />
-          <div className="aurora__item" />
-          <div className="aurora__item" />
-        </div>
-
-        {/* Title with a subtle entrance using framer-motion */}
-        <motion.h1
-          initial={{ opacity: 0, y: 6, scale: 0.995 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="aurora-title px-6"
-        >
-          {text}
-        </motion.h1>
-      </div>
     </div>
   );
 }

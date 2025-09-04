@@ -380,7 +380,7 @@ void main() {
 
   // glow
   float glowDist = distance(vUv, mouse);
-  float glow = pow(1.0 - smoothstep(0.0, 3.5, glowDist), 70.0);
+  float glow = pow(1.0 - smoothstep(0.0, 4.5, glowDist), 20.0);
   float brightnessFactor = clamp(length(baseColor), 0.0, 1.0);
   vec3 reflectionColor = vec3(0.6, 0.7, 1.4);
   vec3 glowColor = reflectionColor * glow * brightnessFactor * 0.4;
@@ -461,7 +461,7 @@ function ShaderPlane({
     materialRef.current.uniforms.mouse.value.copy(smoothMouse);
 
     materialRef.current.uniforms.time.value = clock.getElapsedTime();
-    materialRef.current.uniforms.scroll.value = scroll.current;
+    materialRef.current.uniforms.scroll.value = scroll.current * 5;
     materialRef.current.uniforms.isLightTheme.value = isLightTheme ? 1.0 : 0.0;
 
     const currentReveal = materialRef.current.uniforms.reveal.value;
