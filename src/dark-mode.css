@@ -1,0 +1,82 @@
+:root {
+  --scale: 0.135; /* master scale for toggle size */
+
+  /* base sizes scaled by --scale */
+  --toggleHeight: calc(16em * var(--scale));
+  --toggleWidth: calc(30em * var(--scale));
+  --toggleBtnRadius: calc(10em * var(--scale));
+
+  /* theme colors */
+  --darkbg: #251D29;
+  --darkt: #FFD1F7;
+  --lightbg: #fff;
+  --lightt: #D43370;
+  --bgColor--night: #423966;
+  --toggleBtn-bgColor--night: var(--bgColor--night);
+  --mooncolor: #D9FBFF;
+  --bgColor--day: #9ee3fb;
+  --toggleBtn-bgColor--day: var(--bgColor--day);
+}
+
+
+.light {
+  background: var(--lightbg);
+  color: var(--lightt);
+}
+
+.tdnn {
+  margin: 0 auto;
+  position: relative;
+  height: var(--toggleHeight);
+  width: var(--toggleWidth);
+  border-radius: var(--toggleHeight);
+  transition: all 500ms ease-in-out;
+  background: var(--bgColor--night);
+}
+
+.day {
+  background: #FFBF71;
+}
+
+.moon {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+
+  top: calc(3em * var(--scale));
+  left: calc(3em * var(--scale));
+  transform: rotate(-75deg);
+  width: var(--toggleBtnRadius);
+  height: var(--toggleBtnRadius);
+  background: var(--bgColor--night);
+  box-shadow:
+    calc(3em * var(--scale)) calc(2.5em * var(--scale)) 0 0em var(--mooncolor) inset,
+    rgba(255, 255, 255, 0.1) 0em calc(-7em * var(--scale)) 0 calc(-4.5em * var(--scale)),
+    rgba(255, 255, 255, 0.1) calc(3em * var(--scale)) calc(7em * var(--scale)) 0 calc(-4.5em * var(--scale)),
+    rgba(255, 255, 255, 0.1) calc(2em * var(--scale)) calc(13em * var(--scale)) 0 calc(-4em * var(--scale)),
+    rgba(255, 255, 255, 0.1) calc(6em * var(--scale)) calc(2em * var(--scale)) 0 calc(-4.1em * var(--scale)),
+    rgba(255, 255, 255, 0.1) calc(8em * var(--scale)) calc(8em * var(--scale)) 0 calc(-4.5em * var(--scale)),
+    rgba(255, 255, 255, 0.1) calc(6em * var(--scale)) calc(13em * var(--scale)) 0 calc(-4.5em * var(--scale)),
+    rgba(255, 255, 255, 0.1) calc(-4em * var(--scale)) calc(7em * var(--scale)) 0 calc(-4.5em * var(--scale)),
+    rgba(255, 255, 255, 0.1) calc(-1em * var(--scale)) calc(10em * var(--scale)) 0 calc(-4.5em * var(--scale));
+}
+
+.sun {
+  top: calc(4.5em * var(--scale));
+  left: calc(18em * var(--scale));
+  transform: rotate(0deg);
+  width: calc(7em * var(--scale));
+  height: calc(7em * var(--scale));
+  background: #fff;
+  box-shadow:
+    calc(3em * var(--scale)) calc(3em * var(--scale)) 0 calc(5em * var(--scale)) #fff inset,
+    0 calc(-5em * var(--scale)) 0 calc(-2.7em * var(--scale)) #fff,
+    calc(3.5em * var(--scale)) calc(-3.5em * var(--scale)) 0 calc(-3em * var(--scale)) #fff,
+    calc(5em * var(--scale)) 0 0 calc(-2.7em * var(--scale)) #fff,
+    calc(3.5em * var(--scale)) calc(3.5em * var(--scale)) 0 calc(-3em * var(--scale)) #fff,
+    0 calc(5em * var(--scale)) 0 calc(-2.7em * var(--scale)) #fff,
+    calc(-3.5em * var(--scale)) calc(3.5em * var(--scale)) 0 calc(-3em * var(--scale)) #fff,
+    calc(-5em * var(--scale)) 0 0 calc(-2.7em * var(--scale)) #fff,
+    calc(-3.5em * var(--scale)) calc(-3.5em * var(--scale)) 0 calc(-3em * var(--scale)) #fff;
+}
