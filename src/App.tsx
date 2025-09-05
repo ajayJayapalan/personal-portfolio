@@ -11,6 +11,7 @@ import BackgroundShader from "./components/BackgroundShader";
 import AvailableMarquee from "./components/custom/AvailableMarquee";
 import * as THREE from "three";
 import { useRef, useState } from "react";
+import CursorFollower from "./components/custom/CursorFollower";
 
 let targetMouse = new THREE.Vector2(0.5, 0.5);
 
@@ -29,6 +30,7 @@ export default function App() {
   return (
     <>
       <div onPointerMove={onPointerMove} className="min-h-screen dark">
+        {/* <CursorFollower /> */}
         <BackgroundShader
           isLight={isLight}
           targetMouse={targetMouseRef.current}

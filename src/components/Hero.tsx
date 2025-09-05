@@ -17,6 +17,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import DynamicText from "./custom/DynamicText";
 import AuroraTextEffect from "./custom/AuroraText";
+import HRGlow from "./custom/HRGlow";
 
 export function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,185 +29,53 @@ export function Hero() {
 
   const navigationItems = [
     { id: "hero", label: "Home", icon: Home, color: "cyan" },
-    { id: "about", label: "About", icon: User, color: "cyan" },
-    { id: "skills", label: "Skills", icon: Code, color: "purple" },
-    { id: "projects", label: "Projects", icon: Briefcase, color: "blue" },
-    { id: "experience", label: "Experience", icon: Briefcase, color: "pink" },
-    { id: "contact", label: "Contact", icon: Phone, color: "green" },
+    { id: "about", label: "About", icon: User, color: "purple" },
+    { id: "skills", label: "Skills", icon: Code, color: "blue" },
+    { id: "projects", label: "Projects", icon: Briefcase, color: "pink" },
+    { id: "experience", label: "Experience", icon: Briefcase, color: "green" },
+    { id: "contact", label: "Contact", icon: Phone, color: "yellow" },
   ];
 
   return (
-    <section className="min-h-screen relative overflow-hidden flex">
+    <section id="hero" className="min-h-screen relative overflow-hidden flex">
       <div className="fixed inset-0 bg-gradient-to-r from-black/80 from-30% to-transparent to-100%"></div>
-
-      {/* Mobile Menu Button */}
-      <div className="fixed top-6 left-6 z-50 lg:hidden">
-        <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="glass p-3 rounded-xl hover:neon-glow transition-all duration-300"
-            >
-              <Menu className="h-6 w-6 text-white" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent
-            side="left"
-            className="w-80 glass border-r border-white/10 bg-black/20 backdrop-blur-xl"
-          >
-            <div className="flex flex-col space-y-6 mt-8">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mb-2">
-                  Alex Chen
-                </h2>
-                <p className="text-sm text-white/60 mb-4">
-                  Senior React Developer
-                </p>
-                <div className="h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
-              </div>
-
-              {navigationItems.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.button
-                    key={item.id}
-                    initial={{ x: -50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.1 }}
-                    onClick={() => scrollToSection(item.id)}
-                    className="group flex items-center space-x-4 p-4 rounded-xl glass-hover transition-all duration-300 hover:neon-glow text-left"
-                  >
-                    <div
-                      className={`p-2 rounded-lg bg-gradient-to-r ${
-                        item.color === "cyan"
-                          ? "from-cyan-500/20 to-cyan-600/20"
-                          : item.color === "purple"
-                          ? "from-purple-500/20 to-purple-600/20"
-                          : item.color === "blue"
-                          ? "from-blue-500/20 to-blue-600/20"
-                          : item.color === "pink"
-                          ? "from-pink-500/20 to-pink-600/20"
-                          : "from-green-500/20 to-green-600/20"
-                      }`}
-                    >
-                      <Icon
-                        className={`h-5 w-5 ${
-                          item.color === "cyan"
-                            ? "text-cyan-400"
-                            : item.color === "purple"
-                            ? "text-purple-400"
-                            : item.color === "blue"
-                            ? "text-blue-400"
-                            : item.color === "pink"
-                            ? "text-pink-400"
-                            : "text-green-400"
-                        }`}
-                      />
-                    </div>
-                    <span className="text-white/80 group-hover:text-white transition-colors">
-                      {item.label}
-                    </span>
-                  </motion.button>
-                );
-              })}
-
-              {/* Social Links in Mobile Menu */}
-              <div className="mt-8 pt-8 border-t border-white/10">
-                <p className="text-sm text-white/60 mb-4 text-center">
-                  Connect with me
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <a
-                    href="https://github.com"
-                    className="p-3 rounded-xl glass-hover text-white/70 hover:text-cyan-400 transition-all duration-300 hover:neon-glow"
-                    aria-label="GitHub"
-                  >
-                    <Github className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="https://linkedin.com"
-                    className="p-3 rounded-xl glass-hover text-white/70 hover:text-blue-400 transition-all duration-300 hover:neon-glow"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="mailto:alex@example.com"
-                    className="p-3 rounded-xl glass-hover text-white/70 hover:text-purple-400 transition-all duration-300 hover:neon-glow"
-                    aria-label="Email"
-                  >
-                    <Mail className="h-5 w-5" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </SheetContent>
-        </Sheet>
-      </div>
-
-      {/* Desktop Left Navigation */}
       <motion.nav
-        initial={{ x: -100, opacity: 0 }}
+        initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="hidden lg:flex fixed left-0 top-0 h-full w-20 lg:w-24 z-50 glass-hover flex-col items-center justify-center space-y-8"
+        transition={{ duration: 0.8, delay: 3 }}
+        className="fixed right-4 top-0 h-full w-20 z-50 flex flex-col items-center justify-center space-y-4"
       >
-        <div className="flex flex-col space-y-6">
-          <button
-            onClick={() => scrollToSection("about")}
-            className="group relative p-3 rounded-xl glass-hover transition-all duration-300 hover:neon-glow"
-            title="About"
-          >
-            <div className="w-2 h-8 bg-gradient-to-b from-cyan-400 to-transparent rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
-            <span className="absolute left-12 top-1/2 -translate-y-1/2 text-sm text-white/70 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              About
-            </span>
-          </button>
-
-          <button
-            onClick={() => scrollToSection("skills")}
-            className="group relative p-3 rounded-xl glass-hover transition-all duration-300 hover:neon-glow"
-            title="Skills"
-          >
-            <div className="w-2 h-8 bg-gradient-to-b from-purple-400 to-transparent rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
-            <span className="absolute left-12 top-1/2 -translate-y-1/2 text-sm text-white/70 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              Skills
-            </span>
-          </button>
-
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="group relative p-3 rounded-xl glass-hover transition-all duration-300 hover:neon-glow"
-            title="Projects"
-          >
-            <div className="w-2 h-8 bg-gradient-to-b from-blue-400 to-transparent rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
-            <span className="absolute left-12 top-1/2 -translate-y-1/2 text-sm text-white/70 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              Projects
-            </span>
-          </button>
-
-          <button
-            onClick={() => scrollToSection("experience")}
-            className="group relative p-3 rounded-xl glass-hover transition-all duration-300 hover:neon-glow"
-            title="Experience"
-          >
-            <div className="w-2 h-8 bg-gradient-to-b from-pink-400 to-transparent rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
-            <span className="absolute left-12 top-1/2 -translate-y-1/2 text-sm text-white/70 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              Experience
-            </span>
-          </button>
-
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="group relative p-3 rounded-xl glass-hover transition-all duration-300 hover:neon-glow"
-            title="Contact"
-          >
-            <div className="w-2 h-8 bg-gradient-to-b from-green-400 to-transparent rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
-            <span className="absolute left-12 top-1/2 -translate-y-1/2 text-sm text-white/70 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              Contact
-            </span>
-          </button>
+        <div className="flex flex-col space-y-4">
+          {navigationItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="group relative p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-lg hover:shadow-cyan-500/25"
+                // title={item.label}
+              >
+                <div
+                  className={`w-2 h-8 bg-gradient-to-b ${
+                    item.color === "cyan"
+                      ? "from-cyan-400"
+                      : item.color === "purple"
+                      ? "from-purple-400"
+                      : item.color === "blue"
+                      ? "from-blue-400"
+                      : item.color === "pink"
+                      ? "from-pink-400"
+                      : item.color === "green"
+                      ? "from-green-400"
+                      : "from-yellow-400"
+                  } to-transparent rounded-full opacity-80 group-hover:opacity-100 transition-opacity`}
+                ></div>
+                <span className="absolute bg-gradient-to-l from-black/50 to-transparent right-12 top-1/2 tracking-widest -translate-y-1/2 text-sm text-white px-2 py-1 pl-8 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+                  {item.label}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </motion.nav>
 
@@ -265,7 +134,7 @@ export function Hero() {
                 </motion.span>
 
                 <motion.span
-                  className="block text-white/90 text-8xl"
+                  className="block text-white/90 text-8xl "
                   initial={{ x: 50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
@@ -274,14 +143,7 @@ export function Hero() {
                   {/* <AuroraTextEffect /> */}
                 </motion.span>
               </motion.h1>
-
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 1.5, delay: 1.2 }}
-                className="h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent max-w-md mt-3 mb-5 ml-0 mr-auto"
-              ></motion.div>
-
+              <HRGlow />
               <motion.p
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -358,7 +220,16 @@ export function Hero() {
             <span className="text-sm mb-2 group-hover:text-cyan-400">
               Scroll
             </span>
-            <ChevronDown className="h-6 w-6" />
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <ChevronDown className="h-6 w-6" />
+            </motion.div>
           </motion.button>
         </motion.div>
       </div>
