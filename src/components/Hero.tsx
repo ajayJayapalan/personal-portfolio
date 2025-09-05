@@ -39,21 +39,25 @@ export function Hero() {
   return (
     <section id="hero" className="min-h-screen relative overflow-hidden flex">
       <div className="fixed inset-0 bg-gradient-to-r from-black/80 from-30% to-transparent to-100%"></div>
-      <motion.nav
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 3 }}
-        className="fixed right-4 top-0 h-full w-20 z-50 flex flex-col items-center justify-center space-y-4"
-      >
+      <motion.nav className="fixed right-4 top-0 h-full w-20 z-50 flex flex-col items-center justify-center space-y-4">
         <div className="flex flex-col space-y-4">
-          {navigationItems.map((item) => {
+          {navigationItems.map((item, index) => {
             const Icon = item.icon;
             return (
-              <button
+              <motion.button
                 key={item.id}
+                initial={{ x: 100, opacity: 0, scale: 0.8 }}
+                animate={{ x: 0, opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 2,
+                  delay: 1 + index * 0.08, // Stagger delay: starts at 3.5s, then +0.15s for each item
+                  // ease: [0.25, 0.4, 0.25, 1], // Smooth cubic-bezier easing
+                  ease: "easeOut",
+                }}
                 onClick={() => scrollToSection(item.id)}
                 className="group relative p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-lg hover:shadow-cyan-500/25"
-                // title={item.label}
+                whileHover={{ scale: 1.05 }} // Optional: slight scale on hover
+                whileTap={{ scale: 0.95 }} // Optional: slight scale on click
               >
                 <div
                   className={`w-2 h-8 bg-gradient-to-b ${
@@ -73,7 +77,7 @@ export function Hero() {
                 <span className="absolute bg-gradient-to-l from-black/50 to-transparent right-12 top-1/2 tracking-widest -translate-y-1/2 text-sm text-white px-2 py-1 pl-8 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
                   {item.label}
                 </span>
-              </button>
+              </motion.button>
             );
           })}
         </div>
