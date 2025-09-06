@@ -14,94 +14,58 @@ import ScrollReveal from "./custom/ScrollReveal";
 export function Projects() {
   const projects = [
     {
-      title: "Analytics Dashboard",
+      title: "Enterprise 3D Viewer",
       description:
-        "A comprehensive analytics dashboard built with React, TypeScript, and D3.js. Features real-time data visualization, custom charts, and responsive design.",
+        "Developed dynamic viewers for IFC, SVG, and 3D models in React, enabling smooth visualization of complex datasets for enterprise tools.",
       image:
-        "https://images.unsplash.com/photo-1665470909939-959569b20021?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTY4NDY5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      technologies: [
-        "React",
-        "TypeScript",
-        "D3.js",
-        "Tailwind CSS",
-        "Node.js",
-        "PostgreSQL",
-      ],
-      demoUrl: "https://dashboard-demo.vercel.app",
-      codeUrl: "https://github.com/alexchen/analytics-dashboard",
+        "https://images.unsplash.com/photo-1665470909939-959569b20021?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTY4NDY5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080", // matching the first image in carousel
+      technologies: ["React", "TypeScript", "Three.js", "Tailwind CSS"],
       highlights: [
-        "Reduced data loading time by 60% with optimized queries",
-        "Implemented real-time updates using WebSocket connections",
-        "Built responsive design supporting mobile and desktop views",
+        "Built scalable viewers for multiple 3D/2D data formats",
+        "Improved rendering performance with memoization and lazy loading",
+        "Enabled seamless integration into enterprise-level applications",
       ],
       gradient: "from-cyan-500/20 to-blue-500/20",
     },
     {
-      title: "E-Commerce Platform",
+      title: "Reusable UI Component Library",
       description:
-        "Modern e-commerce solution with cart management, payment integration, and admin panel. Built with Next.js and Stripe integration.",
+        "Engineered a React + TypeScript UI package bundled with Rollup, ensuring consistency and faster development across enterprise projects.",
       image:
         "https://images.unsplash.com/photo-1657256031812-4702fe316f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlLWNvbW1lcmNlJTIwd2Vic2l0ZSUyMGludGVyZmFjZXxlbnwxfHx8fDE3NTY4NzE4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Stripe",
-        "Prisma",
-        "MongoDB",
-      ],
-      demoUrl: "https://ecommerce-demo.vercel.app",
-      codeUrl: "https://github.com/alexchen/ecommerce-platform",
+      technologies: ["React", "TypeScript", "Rollup", "SCSS", "MUI"],
       highlights: [
-        "Integrated Stripe payment processing with 99.9% uptime",
-        "Implemented advanced filtering and search functionality",
-        "Built comprehensive admin dashboard for inventory management",
+        "Created a shared UI library used across multiple apps",
+        "Reduced duplication and improved developer productivity",
+        "Followed clean code and scalable architecture principles",
       ],
       gradient: "from-purple-500/20 to-pink-500/20",
     },
     {
-      title: "Task Management App",
+      title: "Healthcare Booking Platform",
       description:
-        "Collaborative task management application with real-time updates, team collaboration features, and intuitive drag-and-drop interface.",
+        "Launched a multi-city healthcare booking platform in React, enabling patients to find and book services quickly and easily.",
       image:
         "https://images.unsplash.com/photo-1651055693398-0d66969cf759?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXNrJTIwbWFuYWdlbWVudCUyMGFwcCUyMGludGVyZmFjZXxlbnwxfHx8fDE3NTY3ODczNDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      technologies: [
-        "React",
-        "TypeScript",
-        "Socket.io",
-        "Express",
-        "React DnD",
-        "Material-UI",
-      ],
-      demoUrl: "https://taskmanager-demo.vercel.app",
-      codeUrl: "https://github.com/alexchen/task-manager",
+      technologies: ["React", "JavaScript", "REST APIs", "MongoDB"],
       highlights: [
-        "Implemented real-time collaboration for 100+ concurrent users",
-        "Built intuitive drag-and-drop interface using React DnD",
-        "Achieved 95% user satisfaction score in usability testing",
+        "Delivered MVP in one week for fast time-to-market",
+        "Used JSON-driven configs to generate dynamic routes",
+        "Designed fully responsive UI for smooth patient experience",
       ],
       gradient: "from-blue-500/20 to-cyan-500/20",
     },
     {
-      title: "Mobile-First PWA",
+      title: "Short Video Social App",
       description:
-        "Progressive Web App with offline capabilities, push notifications, and native-like experience. Optimized for mobile performance.",
+        "Built a TikTok-style short video app with scroll-based reel navigation and interactive UI for mobile platforms.",
       image:
         "https://images.unsplash.com/photo-1629697776809-f37ceac39e77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBtb2NrdXB8ZW58MXx8fHwxNzU2ODAyNTk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      technologies: [
-        "React",
-        "TypeScript",
-        "PWA",
-        "Service Workers",
-        "IndexedDB",
-        "Web Push",
-      ],
-      demoUrl: "https://pwa-demo.vercel.app",
-      codeUrl: "https://github.com/alexchen/mobile-pwa",
+      technologies: ["React Native", "Redux", "Animations"],
       highlights: [
-        "Achieved 98/100 Lighthouse performance score",
-        "Implemented offline-first architecture with data sync",
-        "Reduced bundle size by 40% with code splitting and lazy loading",
+        "Implemented smooth vertical reel navigation",
+        "Created engaging UI components to boost interactivity",
+        "Optimized performance for mobile responsiveness",
       ],
       gradient: "from-pink-500/20 to-purple-500/20",
     },
@@ -189,7 +153,7 @@ export function Projects() {
                       </ul>
                     </div>
 
-                    <div className="flex gap-3 pt-4">
+                    {/* <div className="flex gap-3 pt-4">
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-semibold neon-glow transition-all duration-300 border-0"
@@ -207,14 +171,14 @@ export function Projects() {
                         <Github className="h-4 w-4 mr-2" />
                         Code
                       </Button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
 
-          <ScrollReveal>
+          {/* <ScrollReveal>
             <div className="text-center mt-16">
               <div className="glass rounded-2xl p-8 max-w-md mx-auto">
                 <p className="text-white/70 mb-6">
@@ -234,7 +198,7 @@ export function Projects() {
                 </Button>
               </div>
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
         </div>
       </div>
     </section>
