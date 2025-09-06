@@ -1,11 +1,16 @@
+# Ajay J – React Developer Portfolio
 
-  # React Developer Portfolio Design
+This is my personal portfolio website built with React.  
+It showcases my skills, projects, and experience as a frontend developer.
 
-  This is a code bundle for React Developer Portfolio Design. The original project is available at https://www.figma.com/design/qlShm5kMiKK8dMTz0YuNBX/React-Developer-Portfolio-Design.
+## Running the project
 
-  ## Running the code
+1. Install dependencies:  
+   \`\`\`bash
+   npm i
+   \`\`\`
 
-  Run `npm i` to install the dependencies.
-
-  Run `npm run dev` to start the development server.
-  
+2. Start the development server:  
+   \`\`\`bash
+   npm run dev
+   \`\`\`
