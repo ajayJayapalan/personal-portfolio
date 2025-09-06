@@ -38,15 +38,15 @@ const CursorFollower = () => {
 
   return (
     <div
-      className="fixed pointer-events-none z-100"
+      className="fixed pointer-events-none z-1000"
       style={{
         left: followerPosition.x - 20,
         top: followerPosition.y - 20,
       }}
     >
-      <div className="w-10 h-10 border-2 border-white/30 rounded-full opacity-80 backdrop-blur-sm bg-white/10 shadow-lg">
+      <div className="w-10 h-10 border-2 border-white/30 rounded-full opacity-80 shadow-lg">
         {/* Magnifier glass reflection effect */}
-        <div className="absolute top-2 left-2 w-3 h-3 bg-white/30 rounded-full blur-sm"></div>
+        {/* <div className="absolute top-2 left-2 w-3 h-3 bg-white/30 rounded-full blur-sm"></div> */}
         {/* Center dot to show magnification point */}
       </div>
     </div>

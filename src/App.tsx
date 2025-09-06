@@ -30,13 +30,13 @@ export default function App() {
   return (
     <>
       <div onPointerMove={onPointerMove} className="min-h-screen dark">
-        {/* <CursorFollower /> */}
+        <CursorFollower />
         <BackgroundShader
           isLight={isLight}
           targetMouse={targetMouseRef.current}
         />
         {/* <Header isLight={isLight} setIsLight={setIsLight} /> */}
-        {/* <AvailableMarquee /> */}
+        <AvailableMarquee />
         <main>
           <Hero />
           <About />
