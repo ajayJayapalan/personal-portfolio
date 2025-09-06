@@ -17,31 +17,31 @@ export function Footer() {
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-bold mb-4">
                   <span className="text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
-                    Alex
+                    Ajay
                   </span>
-                  <span className="text-white"> Chen</span>
+                  <span className="text-white"> Jayapalan</span>
                 </h3>
                 <p className="text-white/70 mb-6 leading-relaxed">
-                  Senior React Developer passionate about creating exceptional
-                  user experiences with modern web technologies.
+                  React Developer passionate about creating exceptional user
+                  experiences with modern web technologies.
                 </p>
                 <div className="flex justify-center md:justify-start space-x-6">
                   <a
-                    href="https://github.com/alexchen"
+                    href="https://github.com/ajayJayapalan"
                     className="glass rounded-full p-3 text-white/70 hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,255,255,0.5)] group"
                     aria-label="GitHub"
                   >
                     <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/alexchen-dev"
+                    href="https://linkedin.com/in/ajay-jayapalan-b4364a1b5/"
                     className="glass rounded-full p-3 text-white/70 hover:text-blue-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] group"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
                   </a>
                   <a
-                    href="mailto:alex.chen@example.com"
+                    href="mailto:ajai.jayapalan@gmail.com"
                     className="glass rounded-full p-3 text-white/70 hover:text-purple-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] group"
                     aria-label="Email"
                   >
@@ -117,11 +117,11 @@ export function Footer() {
                 <div className="space-y-3 text-white/70 mb-6">
                   <p className="flex items-center justify-center md:justify-start">
                     <MapPin className="h-4 w-4 mr-2 text-pink-400" />
-                    San Francisco, CA
+                    Kerala, India
                   </p>
                   <p className="flex items-center justify-center md:justify-start">
                     <Mail className="h-4 w-4 mr-2 text-cyan-400" />
-                    alex.chen@example.com
+                    ajai.jayapalan@gmail.com
                   </p>
                   <p className="flex items-center justify-center md:justify-start">
                     <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
@@ -146,12 +146,12 @@ export function Footer() {
             <div className="border-t border-white/10 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <p className="text-white/60 text-sm">
-                  © {currentYear} Alex Chen. All rights reserved.
+                  © {currentYear} Ajay Jaypalan. All rights reserved.
                 </p>
                 <p className="text-white/60 text-sm flex items-center">
                   Made with{" "}
                   <Heart className="h-4 w-4 text-red-400 mx-2 animate-pulse" />{" "}
-                  using React & TypeScript
+                  using React & Three.js & motion
                 </p>
               </div>
             </div>

@@ -10,7 +10,7 @@ export default function DynamicText({
   typingSpeed = 100,
   deletingSpeed = 30,
   pauseBetweenWords = 1500,
-  initialPause = 6000, // ⏸️ pause before deleting the first word
+  initialPause = 4000, // ⏸️ pause before deleting the first word
   className = "",
   style = {},
 }) {

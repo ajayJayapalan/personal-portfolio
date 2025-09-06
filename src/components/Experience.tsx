@@ -1,104 +1,87 @@
+import { useRef } from "react";
 import ScrollReveal from "./custom/ScrollReveal";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { motion, useScroll, useTransform } from "motion/react";
 
 export function Experience() {
   const experiences = [
     {
-      title: "Senior React Developer",
-      company: "TechStart Inc.",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
+      title: "Software Engineer",
+      subtitle: "React JS, IoT, Digital Twin",
+      company: "Toobler Technologies",
+      location: "Infopark, Kochi, India",
+      period: "July 2022 - August 2024",
       type: "Full-time",
       description:
-        "Leading frontend development for a SaaS platform serving 50K+ users. Architecting and implementing scalable React applications with modern tooling.",
+        "Building scalable, high-performance frontend applications with React and TypeScript. Focused on reusable UI libraries, performance optimization, and visualization tools for complex data formats including 3D models.",
       achievements: [
-        "Led migration from legacy codebase to React 18 + TypeScript, improving performance by 40%",
-        "Mentored 3 junior developers and established code review best practices",
-        "Implemented automated testing suite, increasing code coverage from 45% to 90%",
-        "Built reusable component library used across 5+ product teams",
+        "Developed and maintained reusable React + TypeScript component libraries for enterprise apps",
+        "Engineered dynamic viewers for IFC, SVG, and 3D models, improving visualization workflows",
+        "Optimized performance with memoization, lazy loading, and tree shaking, boosting responsiveness by up to 60%",
+        "Built a reusable UI package with Rollup to reduce duplication across projects",
+        "Collaborated in Agile sprints with designers, backend developers, and product managers",
+        "Implemented clean code principles, SOLID patterns, and scalable architecture practices",
       ],
       technologies: [
         "React",
         "TypeScript",
         "Next.js",
-        "GraphQL",
-        "AWS",
-        "Docker",
+        "Three.js",
+        "Rollup",
+        "Redux",
+        "Tailwind CSS",
+        "Express.js",
+        "MongoDB",
+        "Python (tooling)",
       ],
       gradient: "from-cyan-500/20 to-blue-500/20",
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Solutions Co.",
-      location: "Remote",
-      period: "2021 - 2022",
+      title: "Jr. Software Engineer",
+      subtitle: "React JS, React Native",
+      company: "Mykare Health Technologies",
+      location: "KSUM, Kalamassery, India",
+      period: "Sept 2021 - July 2022",
       type: "Full-time",
       description:
-        "Developed and maintained multiple client projects ranging from e-commerce platforms to corporate websites. Collaborated with designers and backend teams.",
+        "Contributed to healthcare web and mobile platforms using React and React Native. Designed scalable architectures and developed apps that improved booking, consultations, and provider workflows.",
       achievements: [
-        "Delivered 15+ client projects on time and within budget",
-        "Improved website performance scores by average of 35% across all projects",
-        "Implemented responsive designs supporting all major browsers and devices",
-        "Established development workflow reducing deployment time by 50%",
+        "Built and launched a multi-city healthcare booking platform in just one week",
+        "Developed the MyKare Praktice app in React Native, enabling providers to manage bookings",
+        "Created real-time video consultation app using WebRTC with prescription support",
+        "Designed scalable frontend architecture using JSON-driven configuration for dynamic page creation",
+        "Built and integrated REST APIs with Express.js and MongoDB for seamless data flow",
+        "Developed reusable React component libraries to improve consistency across apps",
       ],
       technologies: [
         "React",
-        "JavaScript",
-        "Sass",
-        "Webpack",
+        "React Native",
+        "TypeScript",
+        "Redux",
+        "Express.js",
+        "MongoDB",
         "REST APIs",
-        "Firebase",
+        "WebRTC",
+        "Tailwind CSS",
       ],
       gradient: "from-purple-500/20 to-pink-500/20",
     },
-    {
-      title: "Junior React Developer",
-      company: "StartupHub",
-      location: "San Francisco, CA",
-      period: "2020 - 2021",
-      type: "Full-time",
-      description:
-        "Started my professional journey building user interfaces for various startup projects. Gained experience in agile development and cross-functional collaboration.",
-      achievements: [
-        "Built 10+ React components following company design system",
-        "Collaborated with UX team to implement pixel-perfect designs",
-        "Participated in daily standups and sprint planning sessions",
-        "Contributed to open source projects and internal tooling",
-      ],
-      technologies: ["React", "JavaScript", "CSS3", "Git", "Jira", "Figma"],
-      gradient: "from-blue-500/20 to-cyan-500/20",
-    },
-    {
-      title: "Frontend Developer Intern",
-      company: "WebDev Agency",
-      location: "San Francisco, CA",
-      period: "2019 - 2020",
-      type: "Internship",
-      description:
-        "Summer internship focused on learning React fundamentals and contributing to client projects under senior developer mentorship.",
-      achievements: [
-        "Completed 3-month intensive React bootcamp with 95% success rate",
-        "Built responsive landing pages for 5+ client projects",
-        "Learned version control, testing, and deployment best practices",
-        "Received full-time offer based on strong performance",
-      ],
-      technologies: [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "React",
-        "Bootstrap",
-        "Git",
-      ],
-      gradient: "from-pink-500/20 to-purple-500/20",
-    },
   ];
+
+  const sectionRef = useRef(null);
+
+  // scrollYProgress goes 0 -> 1 while `sectionRef` moves through the viewport
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    // offset controls when progress starts/stops (explained below)
+    offset: ["start end", "end start"],
+  });
 
   return (
     <section id="experience" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
               Professional{" "}
@@ -115,21 +98,23 @@ export function Experience() {
             </p>
           </ScrollReveal>
 
-          <div className="relative">
+          <div ref={sectionRef} className="relative">
             {/* Glowing timeline line */}
-            <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-cyan-400/50 via-purple-400/50 to-pink-400/50 shadow-[0_0_10px_rgba(0,255,255,0.3)]"></div>
+            {/* <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-cyan-400/50 via-purple-400/50 to-pink-400/50 shadow-[0_0_10px_rgba(0,255,255,0.3)]"></div> */}
+            <ScrollLine scrollYProgress={scrollYProgress} />
 
             {experiences.map((exp, index) => (
               <div key={index} className="relative mb-16 last:mb-0 group">
                 {/* Glowing timeline dot */}
-                <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full shadow-[0_0_20px_rgba(0,255,255,0.6)] animate-pulse z-10"></div>
+                <ScrollReveal>
+                  <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full shadow-[0_0_20px_rgba(0,255,255,0.6)] animate-pulse z-10"></div>
+                  {/* <ScrollLine /> */}
 
-                <div
-                  className={`ml-20 md:ml-0 md:w-1/2 ${
-                    index % 2 === 0 ? "md:pr-16" : "md:ml-auto md:pl-16"
-                  }`}
-                >
-                  <ScrollReveal>
+                  <div
+                    className={`ml-20 md:ml-0 md:w-1/2 ${
+                      index % 2 === 0 ? "md:pr-16" : "md:ml-auto md:pl-16"
+                    }`}
+                  >
                     <div className="glass rounded-2xl p-8 hover:scale-105 transition-all duration-500 relative overflow-hidden">
                       {/* Gradient overlay */}
                       <div
@@ -139,15 +124,12 @@ export function Experience() {
                       <div className="relative z-10">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
                           <div>
-                            <h3 className="text-xl font-semibold text-white mb-1">
+                            <h3 className="text-2xl font-semibold text-white mb-1">
                               {exp.title}
                             </h3>
-                            <p className="text-cyan-400 font-medium">
-                              {exp.company}
-                            </p>
-                            <p className="text-white/60 text-sm">
-                              {exp.location}
-                            </p>
+                            <h3 className="text-md font-light text-white/60 mb-1">
+                              ~ {exp.subtitle}
+                            </h3>
                           </div>
                           <div className="text-right mt-2 sm:mt-0">
                             <p className="text-sm text-white/70">
@@ -159,6 +141,14 @@ export function Experience() {
                           </div>
                         </div>
 
+                        <div className="flex items-center text-white/70 mb-4 gap-2">
+                          <p className="text-cyan-400 font-medium">
+                            {exp.company},
+                          </p>
+                          <p className="text-white/60 text-sm">
+                            {exp.location}
+                          </p>
+                        </div>
                         <p className="text-white/80 mb-6 leading-relaxed">
                           {exp.description}
                         </p>
@@ -192,8 +182,8 @@ export function Experience() {
                         </div>
                       </div>
                     </div>
-                  </ScrollReveal>
-                </div>
+                  </div>
+                </ScrollReveal>
               </div>
             ))}
           </div>
@@ -229,5 +219,19 @@ export function Experience() {
         </div>
       </div>
     </section>
+  );
+}
+
+function ScrollLine({ scrollYProgress }) {
+  const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  return (
+    <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-px">
+      <motion.div
+        style={{ height }}
+        className="w-px bg-gradient-to-b from-cyan-400/50 via-purple-400/50 to-pink-400/50 
+                   shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+      />
+    </div>
   );
 }

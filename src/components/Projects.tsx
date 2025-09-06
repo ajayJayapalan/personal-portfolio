@@ -85,8 +85,9 @@ export function Projects() {
           </ScrollReveal>
           <ScrollReveal>
             <p className="text-center text-white/70 mb-16 max-w-2xl mx-auto">
-              A showcase of my recent work, featuring modern web applications
-              built with cutting-edge technologies and best practices.
+              A showcase of my work, built with modern technologies and best
+              practices.{" "}
+              <p>(Some projects are private and can’t be publicly shared.)</p>
             </p>
           </ScrollReveal>
 
@@ -189,7 +190,7 @@ export function Projects() {
                   variant="outline"
                   size="lg"
                   onClick={() =>
-                    window.open("https://github.com/alexchen", "_blank")
+                    window.open("https://github.com/ajayJayapalan", "_blank")
                   }
                   className="glass-hover neon-border text-cyan-400 hover:text-cyan-300 bg-transparent"
                 >

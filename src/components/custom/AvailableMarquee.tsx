@@ -9,7 +9,7 @@ const AvailableMarquee = () => {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 3, duration: 1.5, ease: "easeOut" }}
-      className="overflow-hidden absolute top-0 w-full py-3 z-100 bg-black/20 cursor-default"
+      className="overflow-hidden  fixed top-0 w-full py-3 z-100 bg-black/20 backdrop-blur-sm cursor-default"
     >
       <motion.div
         className="flex whitespace-nowrap"

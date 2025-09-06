@@ -185,21 +185,21 @@ export function Hero() {
               className="hidden md:flex items-center justify-left space-x-8"
             >
               <a
-                href="https://github.com"
+                href="https://github.com/ajayJayapalan"
                 className="glass rounded-full p-4 text-white/70 hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,255,255,0.5)] group hover:scale-110"
                 aria-label="GitHub"
               >
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/ajay-jayapalan-b4364a1b5/"
                 className="glass rounded-full p-4 text-white/70 hover:text-blue-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] group hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-6 w-6" />
               </a>
               <a
-                href="mailto:alex@example.com"
+                href="mailto:ajai.jayapalan@example.com"
                 className="glass rounded-full p-4 text-white/70 hover:text-purple-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] group hover:scale-110"
                 aria-label="Email"
               >
