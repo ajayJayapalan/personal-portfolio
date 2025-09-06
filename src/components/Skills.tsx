@@ -110,13 +110,10 @@ export function Skills() {
               <ScrollReveal key={index} delay={0.1 * index}>
                 <div
                   key={index}
-                  className={`glass rounded-2xl p-8 hover:scale-105 transition-all duration-300 relative overflow-hidden group`}
+                  className={`glass rounded-2xl p-8 hover:scale-102  transition-all duration-300 relative overflow-hidden group`}
                 >
-                  {/* Subtle gradient overlay */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${getColorClasses(
-                      category.color
-                    )} opacity-50 group-hover:opacity-70 transition-opacity`}
+                    className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-${category.color}-600 rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500`}
                   ></div>
 
                   <div className="relative z-10">
@@ -146,7 +143,7 @@ export function Skills() {
             ))}
           </div>
 
-          <ScrollReveal delay={0.2}>
+          {/* <ScrollReveal delay={0.2}>
             <div className="mt-16 text-center">
               <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
                 <p className="text-white/70 mb-6">
@@ -170,7 +167,7 @@ export function Skills() {
                 </div>
               </div>
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
         </div>
       </div>
     </section>

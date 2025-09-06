@@ -7,15 +7,17 @@ export default function DynamicText({
     "Creative Thinker.",
     "Problem Solver.",
   ],
-  typingSpeed = 120,
-  deletingSpeed = 60,
+  typingSpeed = 100,
+  deletingSpeed = 30,
   pauseBetweenWords = 1500,
+  initialPause = 6000, // ⏸️ pause before deleting the first word
   className = "",
   style = {},
 }) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState(words[0] || "");
   const [isDeleting, setIsDeleting] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
+  const [started, setStarted] = useState(false); // ⬅️ controls animation start
   const mounted = useRef(true);
 
   useEffect(() => {
@@ -25,8 +27,14 @@ export default function DynamicText({
     };
   }, []);
 
+  // Start animation after showing first word for `initialPause`
   useEffect(() => {
-    if (!words || words.length === 0) return;
+    const timer = setTimeout(() => setStarted(true), initialPause);
+    return () => clearTimeout(timer);
+  }, [initialPause]);
+
+  useEffect(() => {
+    if (!started || !words || words.length === 0) return;
 
     const currentFullWord = words[wordIndex % words.length];
 
@@ -38,24 +46,20 @@ export default function DynamicText({
     const timeout = setTimeout(() => {
       if (!mounted.current) return;
 
-      // If we're at the full word and not deleting, start deleting
       if (!isDeleting && text === currentFullWord) {
         setIsDeleting(true);
         return;
       }
 
-      // If we're deleting and the text is empty, move to next word
       if (isDeleting && text === "") {
         setIsDeleting(false);
         setWordIndex((w) => (w + 1) % words.length);
         return;
       }
 
-      // Normal typing
       if (!isDeleting) {
         setText(currentFullWord.slice(0, text.length + 1));
       } else {
-        // Normal deleting
         setText(currentFullWord.slice(0, text.length - 1));
       }
     }, delay);
@@ -69,6 +73,7 @@ export default function DynamicText({
     typingSpeed,
     deletingSpeed,
     pauseBetweenWords,
+    started,
   ]);
 
   return (
@@ -80,10 +85,9 @@ export default function DynamicText({
       <span className="dynamic-text">{text}</span>
       <span className="dynamic-cursor" aria-hidden="true" />
 
-      {/* Local styles for the component (keeps it single-file) */}
       <style>{`
         .dynamic-text-container { color: #ffffffaa; }
-        .dynamic-text {  white-space: nowrap; display: inline-block; padding-right: 6px; }
+        .dynamic-text { white-space: nowrap; display: inline-block; padding-right: 6px; }
         .dynamic-cursor { display: inline-block; width: 2px; height: 1em; background: #ffffffaa; vertical-align: bottom; animation: blink 0.8s step-end infinite; margin-left: -2px; }
 
         @keyframes blink {
@@ -91,7 +95,6 @@ export default function DynamicText({
           50%, 100% { opacity: 0; }
         }
 
-        /* Small responsive tweak so long words don't wrap awkwardly */
         @media (max-width: 420px) {
           .dynamic-text-container { font-size: 0.95rem; }
         }

@@ -19,26 +19,29 @@ export function About() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <p className="text-lg text-white/80 leading-relaxed">
-                    I'm a passionate React developer with 4+ years of experience
-                    building modern, scalable web applications. I love turning
-                    complex problems into simple, beautiful solutions that
-                    provide exceptional user experiences.
+                    Hi, I’m Ajay 👋 — a React developer with 4+ years of
+                    experience building modern, scalable web applications. I
+                    thrive on solving tough problems and turning them into
+                    smooth, user-friendly experiences that people actually
+                    enjoy. With a Computer Science background and projects
+                    ranging from startups to enterprise platforms, I’ve helped
+                    create products trusted by thousands of users.
                   </p>
 
                   <p className="text-lg text-white/80 leading-relaxed">
-                    My journey in tech started with a Computer Science degree,
-                    and I've since worked with startups and established
-                    companies, contributing to products used by thousands of
-                    users. I'm always eager to learn new technologies and best
-                    practices.
+                    I specialize in building applications that deal with heavy
+                    logic—whether it’s dynamic 3D viewers, complex data
+                    handling, or performance optimization. Writing clean,
+                    maintainable code that scales is my way of making sure the
+                    experience stays simple, no matter how complex things get
+                    under the hood.
                   </p>
 
                   <p className="text-lg text-white/80 leading-relaxed">
-                    When I'm not coding, you can find me contributing to open
-                    source projects, writing technical blogs, or exploring the
-                    latest in web development. I believe in writing clean,
-                    maintainable code and collaborating effectively with
-                    cross-functional teams.
+                    Outside of code, I explore 3D with Three.js, sketch
+                    realistic drawings, and dive into digital illustration. That
+                    creative side keeps me detail-focused, curious, and always
+                    looking for new ways to connect design with technology.
                   </p>
 
                   <div className="grid grid-cols-2 gap-8 pt-6">
@@ -46,7 +49,7 @@ export function About() {
                       <h3 className="font-semibold text-cyan-400 mb-2">
                         Based in
                       </h3>
-                      <p className="text-white/70">San Francisco, CA</p>
+                      <p className="text-white/70">Kerala, India</p>
                     </div>
                     <div className="glass rounded-xl p-4">
                       <h3 className="font-semibold text-cyan-400 mb-2">
@@ -65,7 +68,7 @@ export function About() {
                         Available
                       </h3>
                       <p className="text-cyan-300 font-medium">
-                        Open to opportunities
+                        Open to Opportunities
                       </p>
                     </div>
                   </div>
@@ -76,7 +79,7 @@ export function About() {
                     <div className="w-80 h-80 rounded-3xl overflow-hidden glass neon-glow">
                       <ImageWithFallback
                         src="https://images.unsplash.com/photo-1555963153-11ff60182d08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTY4NDY5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                        alt="Alex Chen - React Developer"
+                        alt="Ajay Jayapalan - React Developer"
                         className="w-full h-full object-cover"
                       />
                     </div>

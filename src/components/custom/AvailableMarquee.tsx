@@ -1,33 +1,35 @@
 import React from "react";
+import { motion } from "motion/react";
 
 const AvailableMarquee = () => {
-  return (
-    <div className="overflow-hidden whitespace-nowrap w-full bg-black py-3">
-      <div className="flex animate-marquee">
-        <div className="flex-shrink-0 text-white font-light tracking-[0.2em] pr-3">
-          • Open to work • Available in Dubai
-        </div>
-        <div className="flex-shrink-0 text-white font-light tracking-[0.2em] pr-3">
-          • Open to work • Available in Dubai
-        </div>
-        <div className="flex-shrink-0 text-white font-light tracking-[0.2em] pr-3">
-          • Open to work • Available in Dubai
-        </div>
-        <div className="flex-shrink-0 text-white font-light tracking-[0.2em] pr-3">
-          • Open to work • Available in Dubai
-        </div>
-      </div>
+  const text = "• Open to work • Available in Dubai ";
 
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-25%); }
-        }
-        .animate-marquee {
-          animation: marquee 15s linear infinite;
-        }
-      `}</style>
-    </div>
+  return (
+    <motion.div
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 3, duration: 1.5, ease: "easeOut" }}
+      className="overflow-hidden absolute top-0 w-full py-3 z-100 bg-black/20 cursor-default"
+    >
+      <motion.div
+        className="flex whitespace-nowrap"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "linear",
+            delay: 5,
+            duration: 20, // adjust speed
+          },
+        }}
+      >
+        {/* duplicate enough text so it loops seamlessly */}
+        <span className="text-white font-light tracking-[0.2em] pr-6">
+          {text.repeat(10)}
+        </span>
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -108,7 +108,7 @@ export function Hero() {
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-left mb-12 md:mb-16 pt-20 lg:pt-0"
+              className="text-left mb-12 md:mb-16 pt-20 lg:pt-0 cursor-default"
             >
               <motion.h1
                 className="text-9xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 md:mb-8 tracking-tight "

@@ -36,8 +36,8 @@ export default function App() {
           targetMouse={targetMouseRef.current}
         />
         {/* <Header isLight={isLight} setIsLight={setIsLight} /> */}
+        {/* <AvailableMarquee /> */}
         <main>
-          {/* <AvailableMarquee /> */}
           <Hero />
           <About />
           <Skills />
