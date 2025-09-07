@@ -172,9 +172,9 @@ export function Hero() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.4 }}
-                className="text-xl md:text-2xl text-white/70 font-light tracking-wide"
+                className="mt-7 sm:mt-8 md:mt-10 text-white/70 font-light tracking-wide"
               >
-                <DynamicText className="text-xl" />
+                <DynamicText className="text-xl sm:text-2xl  " />
                 {/* Senior React Developer. */}
               </motion.p>
             </motion.div>
@@ -205,19 +205,19 @@ export function Hero() {
             >
               <a
                 href="https://github.com/ajayJayapalan"
-                className="p-3 rounded-full bg-white/10 hover:bg-cyan-500/20 transition"
+                className="p-5 rounded-full bg-white/10 hover:bg-cyan-500/20 transition"
               >
                 <Github className="h-6 w-6 text-white" />
               </a>
               <a
                 href="https://linkedin.com/in/ajay-jayapalan-b4364a1b5/"
-                className="p-3 rounded-full bg-white/10 hover:bg-blue-500/20 transition"
+                className="p-5 rounded-full bg-white/10 hover:bg-blue-500/20 transition"
               >
                 <Linkedin className="h-6 w-6 text-white" />
               </a>
               <a
                 href="mailto:ajai.jayapalan@example.com"
-                className="p-3 rounded-full bg-white/10 hover:bg-purple-500/20 transition"
+                className="p-5 rounded-full bg-white/10 hover:bg-purple-500/20 transition"
               >
                 <Mail className="h-6 w-6 text-white" />
               </a>
