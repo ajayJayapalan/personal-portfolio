@@ -79,8 +79,8 @@ export function Experience() {
   });
 
   return (
-    <section id="experience" className="py-20 relative">
-      <div className="container mx-auto px-6">
+    <section id="experience" className="py-17 sm:py-20 relative">
+      <div className="container mx-auto px-2  xs:px-4  sm:px-6">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
@@ -91,7 +91,7 @@ export function Experience() {
             </h2>
           </ScrollReveal>
           <ScrollReveal>
-            <p className="text-center text-white/70 mb-16 max-w-2xl mx-auto">
+            <p className="text-center text-white/70 mb-8 xs:mb-10 sm:mb-16 max-w-2xl mx-auto">
               4+ years of progressive growth in frontend development, from
               intern to senior developer, with a track record of delivering
               impactful solutions.
@@ -107,15 +107,15 @@ export function Experience() {
               <div key={index} className="relative mb-16 last:mb-0 group">
                 {/* Glowing timeline dot */}
                 <ScrollReveal>
-                  <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full shadow-[0_0_20px_rgba(0,255,255,0.6)] animate-pulse z-10"></div>
+                  <div className="absolute -left-0 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full shadow-[0_0_20px_rgba(0,255,255,0.6)] animate-pulse z-10"></div>
                   {/* <ScrollLine /> */}
 
                   <div
-                    className={`ml-20 md:ml-0 md:w-1/2 ${
+                    className={`ml-8  md:ml-0 md:w-1/2 ${
                       index % 2 === 0 ? "md:pr-16" : "md:ml-auto md:pl-16"
                     }`}
                   >
-                    <div className="glass rounded-2xl p-8 hover:scale-105 transition-all duration-500 relative overflow-hidden">
+                    <div className="glass rounded-2xl p-3 xs:p-6 sm:p-8 hover:scale-105 transition-all duration-500 relative overflow-hidden">
                       {/* Gradient overlay */}
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-30 group-hover:opacity-50 transition-opacity`}
@@ -124,14 +124,14 @@ export function Experience() {
                       <div className="relative z-10">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
                           <div>
-                            <h3 className="text-2xl font-semibold text-white mb-1">
+                            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-1">
                               {exp.title}
                             </h3>
-                            <h3 className="text-md font-light text-white/60 mb-1">
+                            <h3 className="text-xs sm:text-sm font-light text-white/60 mb-1">
                               ~ {exp.subtitle}
                             </h3>
                           </div>
-                          <div className="text-right mt-2 sm:mt-0">
+                          <div className="text-center md:text-left mt-2 sm:mt-0">
                             <p className="text-sm text-white/70">
                               {exp.period}
                             </p>
@@ -141,15 +141,15 @@ export function Experience() {
                           </div>
                         </div>
 
-                        <div className="flex items-center text-white/70 mb-4 gap-2">
-                          <p className="text-cyan-400 font-medium">
+                        <div className="flex items-center text-white/70 mb-2 xs:mb-4 gap-2">
+                          <p className=" text-cyan-400 font-medium">
                             {exp.company},
                           </p>
                           <p className="text-white/60 text-sm">
                             {exp.location}
                           </p>
                         </div>
-                        <p className="text-white/80 mb-6 leading-relaxed">
+                        <p className="text-white/80 text-sm sm:text-base mb-4 xs:mb-6 leading-relaxed">
                           {exp.description}
                         </p>
 
@@ -161,7 +161,7 @@ export function Experience() {
                             {exp.achievements.map((achievement, achIndex) => (
                               <li
                                 key={achIndex}
-                                className="text-sm text-white/70 flex items-start"
+                                className="text-xs sm:text-sm text-white/70 flex items-start"
                               >
                                 <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse"></div>
                                 {achievement}
@@ -190,8 +190,8 @@ export function Experience() {
 
           <ScrollReveal delay={0.25}>
             <div className="text-center mt-16">
-              <div className="glass rounded-2xl p-8 max-w-lg mx-auto">
-                <p className="text-white/70 mb-6">
+              <div className="glass rounded-2xl p-4 xs:p-6 sm:p-8 max-w-lg mx-auto">
+                <p className="text-white/70 mb-3 sm:mb-6">
                   Looking for my full resume or want to discuss opportunities?
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -226,7 +226,7 @@ function ScrollLine({ scrollYProgress }) {
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-px">
+    <div className="absolute left-3 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-px">
       <motion.div
         style={{ height }}
         className="w-px bg-gradient-to-b from-cyan-400/50 via-purple-400/50 to-pink-400/50 

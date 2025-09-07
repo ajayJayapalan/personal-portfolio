@@ -155,8 +155,8 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 relative">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-17 sm:py-20 relative">
+      <div className="container mx-auto px-2  xs:px-4  sm:px-6">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
@@ -167,18 +167,18 @@ export function Skills() {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-center text-white/70 mb-16 max-w-2xl mx-auto">
+            <p className="text-center text-white/70 mb-8 xs:mb-10 sm:mb-16 max-w-2xl mx-auto">
               A comprehensive toolkit built through 4+ years of hands-on
               development experience and continuous learning.
             </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-5 xs:gap-6 sm:gap-8">
             {skillCategories.map((category, index) => (
               <ScrollReveal key={index} delay={0.1 * index}>
                 <div
                   key={index}
-                  className={`glass rounded-2xl p-8 hover:scale-102  transition-all duration-300 relative overflow-hidden group`}
+                  className={`glass rounded-2xl p-4 xs:p-6 sm:p-8 hover:scale-102  transition-all duration-300 relative overflow-hidden group`}
                 >
                   <div
                     className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-${category.color}-600 rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500`}

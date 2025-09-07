@@ -72,8 +72,8 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-17 sm:py-20 relative">
+      <div className="container mx-auto px-2  xs:px-4  sm:px-6">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
@@ -84,7 +84,7 @@ export function Projects() {
             </h2>
           </ScrollReveal>
           <ScrollReveal>
-            <p className="text-center text-white/70 mb-16 max-w-2xl mx-auto">
+            <p className="text-center  text-white/70 mb-8 xs:mb-10 sm:mb-16 max-w-2xl mx-auto">
               A showcase of my work, built with modern technologies and best
               practices.{" "}
               <p>(Some projects are private and can’t be publicly shared.)</p>
@@ -103,7 +103,7 @@ export function Projects() {
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30 group-hover:opacity-50 transition-opacity`}
                   ></div>
 
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-34 xs:h-44 sm:h-64 overflow-hidden">
                     <ImageWithFallback
                       src={project.image}
                       alt={project.title}
@@ -116,7 +116,7 @@ export function Projects() {
                     <div className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400 rounded-full animate-ping delay-1000 opacity-60"></div>
                   </div>
 
-                  <div className="relative p-8 space-y-6">
+                  <div className="relative p-3 xs:p-6 sm:p-8 space-y-6">
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3">
                         {project.title}

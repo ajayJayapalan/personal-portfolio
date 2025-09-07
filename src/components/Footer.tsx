@@ -12,16 +12,16 @@ export function Footer() {
       <div className="glass relative py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
               {/* Brand */}
               <div className="text-center md:text-left">
-                <h3 className="text-2xl font-bold mb-4">
+                <h3 className="text-2xl font-bold mb-3 sm:mb-4">
                   <span className="text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
                     Ajay
                   </span>
                   <span className="text-white"> Jayapalan</span>
                 </h3>
-                <p className="text-white/70 mb-6 leading-relaxed">
+                <p className="text-white/70 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
                   React Developer passionate about creating exceptional user
                   experiences with modern web technologies.
                 </p>
@@ -52,11 +52,11 @@ export function Footer() {
 
               {/* Quick Links */}
               <div className="text-center md:text-left">
-                <h4 className="font-semibold text-cyan-400 mb-6 flex items-center justify-center md:justify-start">
+                <h4 className="font-semibold mb-3 sm:mb-6 text-cyan-400 mb-3 sm:mb-6 flex items-center justify-center md:justify-start">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
                   Quick Links
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-1 ">
                   <li>
                     <button
                       onClick={() =>
@@ -64,7 +64,7 @@ export function Footer() {
                           .getElementById("about")
                           ?.scrollIntoView({ behavior: "smooth" })
                       }
-                      className="text-white/70 hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]"
+                      className="text-white/70 text-sm sm:text-base  hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]"
                     >
                       About Me
                     </button>
@@ -76,7 +76,7 @@ export function Footer() {
                           .getElementById("skills")
                           ?.scrollIntoView({ behavior: "smooth" })
                       }
-                      className="text-white/70 hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]"
+                      className="text-white/70  text-sm sm:text-base hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]"
                     >
                       Skills
                     </button>
@@ -88,7 +88,7 @@ export function Footer() {
                           .getElementById("projects")
                           ?.scrollIntoView({ behavior: "smooth" })
                       }
-                      className="text-white/70 hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]"
+                      className="text-white/70 text-sm sm:text-base hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]"
                     >
                       Projects
                     </button>
@@ -100,7 +100,7 @@ export function Footer() {
                           .getElementById("experience")
                           ?.scrollIntoView({ behavior: "smooth" })
                       }
-                      className="text-white/70 hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]"
+                      className="text-white/70 text-sm sm:text-base hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]"
                     >
                       Experience
                     </button>
@@ -110,20 +110,20 @@ export function Footer() {
 
               {/* Contact Info */}
               <div className="text-center md:text-left">
-                <h4 className="font-semibold text-purple-400 mb-6 flex items-center justify-center md:justify-start">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse"></div>
+                <h4 className="font-semibold text-lg text-purple-400 mb-3 sm:mb-6 flex items-center justify-center md:justify-start">
+                  <div className="w-2 h-2  bg-purple-400 rounded-full mr-3 animate-pulse"></div>
                   Get In Touch
                 </h4>
-                <div className="space-y-3 text-white/70 mb-6">
-                  <p className="flex items-center justify-center md:justify-start">
+                <div className="space-y-2 text-white/70 mb-6">
+                  <p className="flex text-sm sm:text-base items-center justify-center md:justify-start">
                     <MapPin className="h-4 w-4 mr-2 text-pink-400" />
                     Kerala, India
                   </p>
-                  <p className="flex items-center justify-center md:justify-start">
+                  <p className="flex text-sm sm:text-base items-center justify-center md:justify-start">
                     <Mail className="h-4 w-4 mr-2 text-cyan-400" />
                     ajai.jayapalan@gmail.com
                   </p>
-                  <p className="flex items-center justify-center md:justify-start">
+                  <p className="flex text-sm sm:text-base items-center justify-center md:justify-start">
                     <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
                     Open to opportunities
                   </p>
@@ -145,13 +145,13 @@ export function Footer() {
 
             <div className="border-t border-white/10 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <p className="text-white/60 text-sm">
+                <p className="text-white/60 text-xs sm:text-sm">
                   © {currentYear} Ajay Jaypalan. All rights reserved.
                 </p>
-                <p className="text-white/60 text-sm flex items-center">
+                <p className="text-white/60 text-xs sm:text-sm flex items-center">
                   Made with{" "}
                   <Heart className="h-4 w-4 text-red-400 mx-2 animate-pulse" />{" "}
-                  using React & Three.js & motion
+                  using React
                 </p>
               </div>
             </div>
