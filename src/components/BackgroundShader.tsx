@@ -1,6 +1,17 @@
-import React, { useRef, useEffect, useMemo } from "react";
+import React, { useRef, useEffect, useMemo, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < breakpoint);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [breakpoint]);
+  return isMobile;
+}
 
 // ================= Vertex Shader =================
 const vertexShader = `
@@ -515,6 +526,7 @@ export default function BackgroundShader({
   isLight: boolean;
 }) {
   const scroll = useRef(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -523,6 +535,21 @@ export default function BackgroundShader({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // return (
+  //   <div
+  //     style={{
+  //       position: "fixed",
+  //       inset: 0,
+  //       zIndex: 0,
+  //       pointerEvents: "none",
+  //       width: "100vw",
+  //       height: "100vh",
+  //       overflow: "hidden",
+  //       backgroundColor: "red",
+  //     }}
+  //   ></div>
+  // );
 
   return (
     <Canvas
@@ -534,14 +561,20 @@ export default function BackgroundShader({
         width: "100vw",
         height: "100vh",
         backgroundColor: "black",
+        overflow: "hidden",
       }}
-      camera={{ position: [0, 0, 30], near: 0.1, far: 50, zoom: 10 }}
+      camera={{
+        position: [0, 0, 30],
+        near: 0.1,
+        far: 50,
+        zoom: isMobile ? 1 : 10, // less zoom on mobile for natural spacing
+      }}
     >
       <ShaderPlane
         targetMouse={targetMouse}
         scroll={scroll}
         isLightTheme={isLight}
-        meshScale={[40, 40, 1]}
+        meshScale={isMobile ? [10, 10, 1] : [40, 40, 1]} // smaller on mobile
       />
     </Canvas>
   );

@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import {
   ArrowRight,
   Github,
@@ -12,7 +12,6 @@ import {
   Code,
   Briefcase,
   Phone,
-  X,
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
@@ -25,7 +24,7 @@ export function Hero() {
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false);
+    setIsMenuOpen(false); // Close mobile menu after navigation
   };
 
   const navigationItems = [
@@ -38,14 +37,10 @@ export function Hero() {
   ];
 
   return (
-    <section
-      id="hero"
-      className=" flex min-h-screen items-center justify-center overflow-hidden"
-    >
+    <section id="hero" className="min-h-screen relative overflow-hidden flex">
       <div className="fixed inset-0 bg-gradient-to-r from-black/80 from-30% to-transparent to-100% "></div>
 
-      {/* Desktop Nav (same as before, only md+ screens) */}
-      <motion.nav className="hidden md:flex fixed right-4 top-0 h-full w-20 z-50 flex-col items-center justify-center space-y-4">
+      <motion.nav className="fixed right-4 top-0 h-full w-20 z-50 flex flex-col items-center justify-center space-y-4">
         <div className="flex flex-col space-y-4">
           {navigationItems.map((item, index) => {
             const Icon = item.icon;
@@ -56,13 +51,14 @@ export function Hero() {
                 animate={{ x: 0, opacity: 1, scale: 1 }}
                 transition={{
                   duration: 2,
-                  delay: 1 + index * 0.08,
+                  delay: 1 + index * 0.08, // Stagger delay: starts at 3.5s, then +0.15s for each item
+                  // ease: [0.25, 0.4, 0.25, 1], // Smooth cubic-bezier easing
                   ease: "easeOut",
                 }}
                 onClick={() => scrollToSection(item.id)}
                 className="group relative p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-lg hover:shadow-cyan-500/25"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }} // Optional: slight scale on hover
+                whileTap={{ scale: 0.95 }} // Optional: slight scale on click
               >
                 <div
                   className={`w-2 h-8 bg-gradient-to-b ${
@@ -78,7 +74,7 @@ export function Hero() {
                       ? "from-green-400"
                       : "from-yellow-400"
                   } to-transparent rounded-full opacity-80 group-hover:opacity-100 transition-opacity`}
-                />
+                ></div>
                 <span className="absolute bg-gradient-to-l from-black/50 to-transparent right-12 top-1/2 tracking-widest -translate-y-1/2 text-sm text-white px-2 py-1 pl-8 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
                   {item.label}
                 </span>
@@ -87,40 +83,6 @@ export function Hero() {
           })}
         </div>
       </motion.nav>
-
-      {/* Mobile Nav (hamburger + sheet) */}
-      <div className="md:hidden  fixed top-4 right-4 z-50">
-        <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-          <SheetTrigger asChild>
-            <button
-              onClick={() => setIsMenuOpen(true)}
-              className="p-3 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </SheetTrigger>
-          <SheetContent
-            side="right"
-            className="glass p-3 backdrop-blur-lg border-l border-white/10"
-          >
-            <nav className="flex flex-col gap-6 mt-10">
-              {navigationItems.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="flex tracking-widest items-center gap-4 text-lg font-medium text-white/80 hover:text-cyan-400 transition"
-                  >
-                    {/* <Icon className="h-5 w-5" /> */}
-                    {item.label}
-                  </button>
-                );
-              })}
-            </nav>
-          </SheetContent>
-        </Sheet>
-      </div>
 
       {/* Main Content */}
       <div className="flex-1 lg:ml-20 xl:ml-24 min-h-screen flex items-center justify-center relative">
@@ -131,10 +93,10 @@ export function Hero() {
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-center sm:text-left mb-12 md:mb-16 pt-20 lg:pt-0 cursor-default"
+              className="text-left mb-12 md:mb-16 pt-20 lg:pt-0 cursor-default"
             >
               <motion.h1
-                className=" font-black text-white mb-6 md:mb-8 tracking-tight "
+                className="text-9xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 md:mb-8 tracking-tight "
                 style={{ fontFamily: "'Poppins', sans-serif" }}
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -142,22 +104,32 @@ export function Hero() {
               >
                 <motion.span
                   className="block text-transparent bg-gradient-to-r from-cyan-400 via-sky-400 via-blue-400 via-indigo-400 to-purple-400 bg-clip-text"
+                  // animate={{
+                  //   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  // }}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
                     ease: "linear",
                   }}
+                  // style={{
+                  //   backgroundSize: "300% 300%",
+                  //   filter:
+                  //     "drop-shadow(0 0 35px rgba(0,255,255,0.35)) drop-shadow(0 0 25px rgba(150,100,255,0.3))",
+                  // }}
                 >
-                  <AuroraTextEffect>Ajay</AuroraTextEffect>
+                  {/* Ajay */}
+                  <AuroraTextEffect />
                 </motion.span>
 
                 <motion.span
-                  className="block text-white/90 text-5xl sm:text-6xl md:text-7xl lg:text-8xl "
+                  className="block text-white/90 text-8xl "
                   initial={{ x: 50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
                   Jayapalan.
+                  {/* <AuroraTextEffect /> */}
                 </motion.span>
               </motion.h1>
               <HRGlow />
@@ -174,45 +146,48 @@ export function Hero() {
 
             {/* Call to Actions */}
             <motion.div
-              initial={{ y: 40, opacity: 0 }}
+              initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="mt-10 flex flex-col sm:flex-row items-center gap-6"
+              transition={{ duration: 0.8, delay: 1.6 }}
+              className="flex flex-col sm:flex-row items-center justify-left gap-6 mb-12 md:mb-16"
             >
               <Button
                 size="lg"
                 onClick={() => scrollToSection("projects")}
-                className="rounded-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white text-sm md:text-base tracking-wider shadow-lg"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-light tracking-widest px-8 md:px-10 py-3 md:py-4 neon-glow transition-all duration-300 border-0 rounded-full group text-sm md:text-base"
               >
                 Explore Work
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
 
             {/* Social Links - Hidden on Mobile (available in mobile menu) */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-              className="mt-10 flex justify-center md:justify-start space-x-6"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+              className="hidden md:flex items-center justify-left space-x-8"
             >
               <a
                 href="https://github.com/ajayJayapalan"
-                className="p-3 rounded-full bg-white/10 hover:bg-cyan-500/20 transition"
+                className="glass rounded-full p-4 text-white/70 hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,255,255,0.5)] group hover:scale-110"
+                aria-label="GitHub"
               >
-                <Github className="h-6 w-6 text-white" />
+                <Github className="h-6 w-6" />
               </a>
               <a
                 href="https://linkedin.com/in/ajay-jayapalan-b4364a1b5/"
-                className="p-3 rounded-full bg-white/10 hover:bg-blue-500/20 transition"
+                className="glass rounded-full p-4 text-white/70 hover:text-blue-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] group hover:scale-110"
+                aria-label="LinkedIn"
               >
-                <Linkedin className="h-6 w-6 text-white" />
+                <Linkedin className="h-6 w-6" />
               </a>
               <a
                 href="mailto:ajai.jayapalan@example.com"
-                className="p-3 rounded-full bg-white/10 hover:bg-purple-500/20 transition"
+                className="glass rounded-full p-4 text-white/70 hover:text-purple-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] group hover:scale-110"
+                aria-label="Email"
               >
-                <Mail className="h-6 w-6 text-white" />
+                <Mail className="h-6 w-6" />
               </a>
             </motion.div>
           </div>

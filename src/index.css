@@ -511,7 +511,7 @@
   }
 }
 
-@layer utilities {
+/* @layer utilities {
   .\@container\/card-header {
     container: card-header / inline-size;
   }
@@ -2484,10 +2484,6 @@
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
 
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
 
   .text-base {
     font-size: var(--text-base);
@@ -5245,7 +5241,7 @@
       color: var(--accent-foreground);
     }
   }
-}
+} */
 
 
 :root {

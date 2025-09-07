@@ -38,7 +38,7 @@ const CursorFollower = () => {
 
   return (
     <div
-      className="fixed pointer-events-none z-1000"
+      className="hidden md:block fixed pointer-events-none z-1000"
       style={{
         left: followerPosition.x - 20,
         top: followerPosition.y - 20,

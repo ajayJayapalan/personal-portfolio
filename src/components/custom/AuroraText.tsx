@@ -1,12 +1,12 @@
 import React from "react";
 
-const AuroraTextEffect = () => {
+const AuroraTextEffect = ({ children }) => {
   return (
     <div className="">
       <div className="relative">
         {/* Main text with aurora effect */}
-        <h1 className="aurora-text text-8xl md:text-9xl font-bold relative z-10">
-          Ajay
+        <h1 className="aurora-text text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold relative z-10">
+          {children}
         </h1>
       </div>
 
@@ -136,19 +136,6 @@ const AuroraTextEffect = () => {
         /* Add subtle glow effect */
         .aurora-text {
           filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-          .aurora-text {
-            font-size: 4rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .aurora-text {
-            font-size: 3rem;
-          }
         }
       `}</style>
     </div>

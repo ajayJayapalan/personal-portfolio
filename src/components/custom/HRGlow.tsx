@@ -14,7 +14,7 @@ const HRGlow = () => {
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
         transition={{ duration: 1.5, delay: 1.2 }}
-        className="relative h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent max-w-md mt-3 mb-5 ml-0 mr-auto"
+        className=" h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent max-w-md mt-3 mb-5 ml-0 mr-auto"
         style={{
           filter: "blur(3px)",
           boxShadow: `
