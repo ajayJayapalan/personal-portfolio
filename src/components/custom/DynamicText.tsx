@@ -95,9 +95,6 @@ export default function DynamicText({
           50%, 100% { opacity: 0; }
         }
 
-        @media (max-width: 420px) {
-          .dynamic-text-container { font-size: 0.95rem; }
-        }
       `}</style>
     </span>
   );

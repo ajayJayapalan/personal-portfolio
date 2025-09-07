@@ -40,9 +40,9 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className=" flex min-h-screen items-center justify-center overflow-hidden"
+      className=" relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      <div className="fixed inset-0 bg-gradient-to-r from-black/80 from-30% to-transparent to-100% "></div>
+      <div className="hidden md:block fixed inset-0 bg-gradient-to-r from-black/80 from-30% to-transparent to-100% "></div>
 
       {/* Desktop Nav (same as before, only md+ screens) */}
       <motion.nav className="hidden md:flex fixed right-4 top-0 h-full w-20 z-50 flex-col items-center justify-center space-y-4">
@@ -92,16 +92,23 @@ export function Hero() {
       <div className="md:hidden  fixed top-4 right-4 z-50">
         <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
           <SheetTrigger asChild>
-            <button
+            <motion.button
+              initial={{ x: 100, opacity: 0, scale: 0.8 }}
+              animate={{ x: 0, opacity: 1, scale: 1 }}
+              transition={{
+                duration: 2,
+                delay: 2,
+                ease: "easeOut",
+              }}
               onClick={() => setIsMenuOpen(true)}
               className="p-3 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
             >
               <Menu className="h-6 w-6" />
-            </button>
+            </motion.button>
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="glass p-3 backdrop-blur-lg border-l border-white/10"
+            className="glass p-3 pl-7 pt-10 backdrop-blur-lg border-l border-white/10"
           >
             <nav className="flex flex-col gap-6 mt-10">
               {navigationItems.map((item, index) => {
@@ -110,7 +117,7 @@ export function Hero() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="flex tracking-widest items-center gap-4 text-lg font-medium text-white/80 hover:text-cyan-400 transition"
+                    className="flex tracking-widest items-center gap-4 text-lg font-light text-white/80 hover:text-cyan-400 transition"
                   >
                     {/* <Icon className="h-5 w-5" /> */}
                     {item.label}
@@ -167,7 +174,7 @@ export function Hero() {
                 transition={{ duration: 0.8, delay: 1.4 }}
                 className="text-xl md:text-2xl text-white/70 font-light tracking-wide"
               >
-                <DynamicText />
+                <DynamicText className="text-xl" />
                 {/* Senior React Developer. */}
               </motion.p>
             </motion.div>
@@ -223,7 +230,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 2.5 }}
-          className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2"
         >
           <motion.button
             onClick={() => scrollToSection("about")}
@@ -231,11 +238,11 @@ export function Hero() {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <span className="text-sm mb-2 group-hover:text-cyan-400">
+            <span className="text-sm mb-1  group-hover:text-cyan-400">
               Scroll
             </span>
             <motion.div
-              animate={{ y: [0, 10, 0] }}
+              animate={{ y: [0, 5, 0] }}
               transition={{
                 duration: 2,
                 repeat: Infinity,
