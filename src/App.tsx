@@ -29,10 +29,7 @@ export default function App() {
 
   return (
     <>
-      <div
-        onPointerMove={onPointerMove}
-        className="min-h-screen dark overflow-x-hidden"
-      >
+      <div onPointerMove={onPointerMove} className="min-h-[100dvh] dark ">
         <CursorFollower />
         <BackgroundShader
           isLight={isLight}

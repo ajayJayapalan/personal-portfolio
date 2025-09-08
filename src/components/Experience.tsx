@@ -11,7 +11,7 @@ export function Experience() {
       subtitle: "React JS, IoT, Digital Twin",
       company: "Toobler Technologies",
       location: "Infopark, Kochi, India",
-      period: "July 2022 - August 2024",
+      period: "July 2022 - Aug 2024",
       type: "Full-time",
       description:
         "Building scalable, high-performance frontend applications with React and TypeScript. Focused on reusable UI libraries, performance optimization, and visualization tools for complex data formats including 3D models.",
@@ -131,7 +131,7 @@ export function Experience() {
                               ~ {exp.subtitle}
                             </h3>
                           </div>
-                          <div className="text-center md:text-left mt-2 sm:mt-0">
+                          <div className="text-center  md:text-left mt-2 sm:mt-0">
                             <p className="text-sm text-white/70">
                               {exp.period}
                             </p>
@@ -197,7 +197,7 @@ export function Experience() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Button
                     onClick={() => window.open("/resume.pdf", "_blank")}
-                    className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-semibold neon-glow transition-all duration-300 border-0"
+                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-semibold neon-glow transition-all duration-300 border-0"
                   >
                     Download Resume
                   </Button>
@@ -208,7 +208,7 @@ export function Experience() {
                         .getElementById("contact")
                         ?.scrollIntoView({ behavior: "smooth" })
                     }
-                    className="glass-hover neon-border text-cyan-400 hover:text-cyan-300 bg-transparent"
+                    className="glass-hover rounded-full neon-border text-cyan-400 hover:text-cyan-300 bg-transparent"
                   >
                     Get In Touch
                   </Button>
