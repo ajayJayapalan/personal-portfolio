@@ -1,42 +1,9 @@
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
 import { Mail, Github, Linkedin, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import ScrollReveal from "./custom/ScrollReveal";
+import SendMessage from "./custom/SendMessage";
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real application, this would send the form data to a backend
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   const contactLinks = [
     {
       icon: Mail,
@@ -129,7 +96,7 @@ export function Contact() {
 
                       <div className="relative z-10">
                         <div className="flex items-center space-x-4">
-                          <div className="glass rounded-xl p-3  transition-transform">
+                          <div className="glass rounded-full p-3  transition-transform">
                             <link.icon
                               className={`h-6 w-6 ${link.iconColor}`}
                             />
@@ -181,112 +148,7 @@ export function Contact() {
               </ScrollReveal>
             </div>
 
-            {/* Contact Form */}
-            <ScrollReveal>
-              <div className="glass rounded-3xl p-4 xs:p-6 sm:p-8 relative overflow-hidden group">
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 opacity-50 group-hover:opacity-70 transition-opacity"></div>
-
-                <div className="relative z-10">
-                  <div className="mb-4 sm:mb-8">
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                      Send a Message
-                    </h3>
-                    <p className="text-sm sm:text-base text-white/70">
-                      Fill out the form below and I'll get back to you as soon
-                      as possible.
-                    </p>
-                  </div>
-
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label
-                          htmlFor="name"
-                          className="block text-xs sm:text-sm font-medium text-cyan-400 mb-2"
-                        >
-                          Name *
-                        </label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Your full name"
-                          className="glass neon-border text-white placeholder:text-white/50 focus:border-cyan-400"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block text-xs sm:text-sm font-medium text-cyan-400 mb-2"
-                        >
-                          Email *
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="your.email@example.com"
-                          className="glass neon-border text-white placeholder:text-white/50 focus:border-cyan-400"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="subject"
-                        className="block text-xs sm:text-sm font-medium text-cyan-400 mb-2"
-                      >
-                        Subject *
-                      </label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        type="text"
-                        required
-                        value={formData.subject}
-                        onChange={handleChange}
-                        placeholder="What's this about?"
-                        className="glass neon-border text-white placeholder:text-white/50 focus:border-cyan-400"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-xs sm:text-sm font-medium text-cyan-400 mb-2"
-                      >
-                        Message *
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        required
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell me about your project, opportunity, or just say hello..."
-                        rows={6}
-                        className="glass neon-border text-white placeholder:text-white/50 focus:border-cyan-400 resize-none"
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-black font-semibold neon-glow transition-all duration-300 border-0"
-                    >
-                      Send Message
-                    </Button>
-                  </form>
-                </div>
-              </div>
-            </ScrollReveal>
+            <SendMessage />
           </div>
         </div>
       </div>

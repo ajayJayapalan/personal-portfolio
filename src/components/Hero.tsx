@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "./ui/sheet";
+
 import {
   ArrowRight,
   Github,
@@ -14,7 +15,7 @@ import {
   Phone,
   X,
 } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import DynamicText from "./custom/DynamicText";
 import AuroraTextEffect from "./custom/AuroraText";
@@ -40,7 +41,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className=" relative flex min-h-screen items-center justify-center overflow-hidden"
+      className=" relative flex min-h-[100dvh] items-center justify-center overflow-hidden"
     >
       <div className="hidden md:block fixed inset-0 bg-gradient-to-r from-black/80 from-30% to-transparent to-100% "></div>
 
@@ -101,36 +102,38 @@ export function Hero() {
                 ease: "easeOut",
               }}
               onClick={() => setIsMenuOpen(true)}
-              className="p-3 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
+              className="p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
             >
               <Menu className="h-6 w-6" />
             </motion.button>
           </SheetTrigger>
-          <SheetContent
-            side="right"
-            className="glass p-3 pl-7 pt-10 backdrop-blur-lg border-l border-white/10"
-          >
-            <nav className="flex flex-col gap-6 mt-10">
-              {navigationItems.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="flex tracking-widest items-center gap-4 text-lg font-light text-white/80 hover:text-cyan-400 transition"
-                  >
-                    {/* <Icon className="h-5 w-5" /> */}
-                    {item.label}
-                  </button>
-                );
-              })}
-            </nav>
-          </SheetContent>
+          <AnimatePresence>
+            <SheetContent
+              side="right"
+              className="glass p-3 pl-7 pt-10 backdrop-blur-lg border-l border-white/10"
+            >
+              <nav className="flex flex-col gap-6 mt-10">
+                {navigationItems.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="flex tracking-widest items-center gap-4 text-lg font-light text-white/80 hover:text-cyan-400 transition"
+                    >
+                      {/* <Icon className="h-5 w-5" /> */}
+                      {item.label}
+                    </button>
+                  );
+                })}
+              </nav>
+            </SheetContent>
+          </AnimatePresence>
         </Sheet>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 lg:ml-20 xl:ml-24 min-h-screen flex items-end pb-8 sm:pb-0 sm:items-center justify-center relative">
+      <div className="flex-1 lg:ml-20 xl:ml-24 min-h-[100dvh] flex items-end pb-8 sm:pb-0 sm:items-center justify-center relative">
         <div className="container mx-auto px-6 md:px-8 lg:px-16 relative z-10 ">
           <div className="max-w-6xl mx-auto">
             {/* Main Name Display */}

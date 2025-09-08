@@ -37,7 +37,7 @@ export function Hero() {
   ];
 
   return (
-    <section id="hero" className="min-h-screen relative overflow-hidden flex">
+    <section id="hero" className="min-h-[100dvh] relative overflow-hidden flex">
       <div className="fixed inset-0 bg-gradient-to-r from-black/80 from-30% to-transparent to-100% "></div>
 
       <motion.nav className="fixed right-4 top-0 h-full w-20 z-50 flex flex-col items-center justify-center space-y-4">
@@ -85,7 +85,7 @@ export function Hero() {
       </motion.nav>
 
       {/* Main Content */}
-      <div className="flex-1 lg:ml-20 xl:ml-24 min-h-screen flex items-center justify-center relative">
+      <div className="flex-1 lg:ml-20 xl:ml-24 min-h-[100dvh] flex items-center justify-center relative">
         <div className="container mx-auto px-6 md:px-8 lg:px-16 relative z-10 ">
           <div className="max-w-6xl mx-auto">
             {/* Main Name Display */}
