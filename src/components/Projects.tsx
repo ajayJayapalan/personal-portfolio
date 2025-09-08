@@ -96,7 +96,7 @@ export function Projects() {
               <ScrollReveal key={index} delay={0.2 * index}>
                 <div
                   key={index}
-                  className="glass rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 group relative"
+                  className="glass rounded-3xl overflow-hidden  transition-all duration-500 group relative"
                 >
                   {/* Gradient overlay */}
                   <div
@@ -107,7 +107,7 @@ export function Projects() {
                     <ImageWithFallback
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover  transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 

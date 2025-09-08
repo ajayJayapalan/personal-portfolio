@@ -31,21 +31,21 @@ export function Footer() {
                     className="glass rounded-full p-3 text-white/70 hover:text-cyan-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,255,255,0.5)] group"
                     aria-label="GitHub"
                   >
-                    <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                    <Github className="h-5 w-5  transition-transform" />
                   </a>
                   <a
                     href="https://linkedin.com/in/ajay-jayapalan-b4364a1b5/"
                     className="glass rounded-full p-3 text-white/70 hover:text-blue-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] group"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                    <Linkedin className="h-5 w-5  transition-transform" />
                   </a>
                   <a
                     href="mailto:ajai.jayapalan@gmail.com"
                     className="glass rounded-full p-3 text-white/70 hover:text-purple-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] group"
                     aria-label="Email"
                   >
-                    <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                    <Mail className="h-5 w-5  transition-transform" />
                   </a>
                 </div>
               </div>

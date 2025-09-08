@@ -178,7 +178,7 @@ export function Skills() {
               <ScrollReveal key={index} delay={0.1 * index}>
                 <div
                   key={index}
-                  className={`glass rounded-2xl p-4 xs:p-6 sm:p-8 hover:scale-102  transition-all duration-300 relative overflow-hidden group`}
+                  className={`glass rounded-2xl p-4 xs:p-6 sm:p-8  transition-all duration-300 relative overflow-hidden group`}
                 >
                   <div
                     className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-${category.color}-600 rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500`}

@@ -443,7 +443,6 @@ function ShaderPlane({
   targetMouse,
   scroll,
   isLightTheme,
-  meshScale = [1, 1, 1],
 }: {
   targetMouse: THREE.Vector2;
   scroll: React.MutableRefObject<number>;
@@ -505,7 +504,7 @@ function ShaderPlane({
   }, [isLightTheme]);
 
   return (
-    <mesh frustumCulled={false} scale={meshScale}>
+    <mesh frustumCulled={false}>
       <planeGeometry args={[2, 2]} />
       <shaderMaterial
         ref={materialRef}
@@ -559,22 +558,25 @@ export default function BackgroundShader({
         inset: 0,
         zIndex: 0,
         width: "100vw",
+        minWidth: "40rem",
+        minHeight: "50rem",
         height: "100vh",
-        backgroundColor: "black",
+        // backgroundColor: "black",
         overflow: "hidden",
+        display: "grid",
+        placeItems: "center",
       }}
-      camera={{
-        position: [0, 0, 30],
-        near: 0.1,
-        far: 50,
-        zoom: isMobile ? 1 : 10, // less zoom on mobile for natural spacing
-      }}
+      // camera={{
+      //   position: [0, 0, 30],
+      //   near: 0.1,
+      //   far: 50,
+      //   zoom: isMobile ? 1 : 10, // less zoom on mobile for natural spacing
+      // }}
     >
       <ShaderPlane
         targetMouse={targetMouse}
         scroll={scroll}
         isLightTheme={isLight}
-        meshScale={isMobile ? [10, 10, 1] : [40, 40, 1]} // smaller on mobile
       />
     </Canvas>
   );

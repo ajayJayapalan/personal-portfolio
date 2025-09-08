@@ -115,7 +115,7 @@ export function Experience() {
                       index % 2 === 0 ? "md:pr-16" : "md:ml-auto md:pl-16"
                     }`}
                   >
-                    <div className="glass rounded-2xl p-3 xs:p-6 sm:p-8 hover:scale-105 transition-all duration-500 relative overflow-hidden">
+                    <div className="glass rounded-2xl p-3 xs:p-6 sm:p-8  transition-all duration-500 relative overflow-hidden">
                       {/* Gradient overlay */}
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-30 group-hover:opacity-50 transition-opacity`}

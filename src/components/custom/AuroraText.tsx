@@ -5,7 +5,7 @@ const AuroraTextEffect = ({ children }) => {
     <div className="">
       <div className="relative">
         {/* Main text with aurora effect */}
-        <h1 className="aurora-text text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold relative z-10">
+        <h1 className="aurora-text text-7xl sm:text-7xl md:text-8xl lg:text-9xl font-bold relative z-10">
           {children}
         </h1>
       </div>
