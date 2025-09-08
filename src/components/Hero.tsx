@@ -130,7 +130,7 @@ export function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 lg:ml-20 xl:ml-24 min-h-screen flex items-center justify-center relative">
+      <div className="flex-1 lg:ml-20 xl:ml-24 min-h-screen flex items-end pb-8 sm:pb-0 sm:items-center justify-center relative">
         <div className="container mx-auto px-6 md:px-8 lg:px-16 relative z-10 ">
           <div className="max-w-6xl mx-auto">
             {/* Main Name Display */}
@@ -138,7 +138,8 @@ export function Hero() {
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-center sm:text-left mb-12 md:mb-16 pt-20 lg:pt-0 cursor-default"
+              // mb-12 md:mb-16
+              className="text-left sm:text-left  pt-20 lg:pt-0 cursor-default"
             >
               <motion.h1
                 className=" font-black text-white mb-6 md:mb-8 tracking-tight "
@@ -184,15 +185,15 @@ export function Hero() {
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="mt-10 flex flex-col sm:flex-row items-center gap-6"
+              className="mt-10 flex flex-col sm:flex-row items-start gap-6"
             >
               <Button
                 size="lg"
                 onClick={() => scrollToSection("projects")}
-                className="rounded-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white text-sm md:text-base tracking-wider shadow-lg"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-light tracking-widest px-8 md:px-10 py-3 md:py-4 neon-glow transition-all duration-300 border-0 rounded-full group text-sm md:text-base"
               >
                 Explore Work
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
 
@@ -201,25 +202,25 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
-              className="mt-10 flex justify-center md:justify-start space-x-6"
+              className="mt-6 sm:mt-10 flex justify-start md:justify-start space-x-4 sm:space-x-6"
             >
               <a
                 href="https://github.com/ajayJayapalan"
-                className="p-5 rounded-full bg-white/10 hover:bg-cyan-500/20 transition"
+                className="p-4 md:p-5 rounded-full bg-white/10 hover:bg-cyan-500/20 transition"
               >
-                <Github className="h-6 w-6 text-white" />
+                <Github className="h-5 w-5 md:h-6 md:w-6 text-white" />
               </a>
               <a
                 href="https://linkedin.com/in/ajay-jayapalan-b4364a1b5/"
-                className="p-5 rounded-full bg-white/10 hover:bg-blue-500/20 transition"
+                className="p-4 md:p-5 rounded-full bg-white/10 hover:bg-blue-500/20 transition"
               >
-                <Linkedin className="h-6 w-6 text-white" />
+                <Linkedin className="h-5 w-5 md:h-6 md:w-6 text-white" />
               </a>
               <a
                 href="mailto:ajai.jayapalan@example.com"
-                className="p-5 rounded-full bg-white/10 hover:bg-purple-500/20 transition"
+                className="p-4 md:p-5 rounded-full bg-white/10 hover:bg-purple-500/20 transition"
               >
-                <Mail className="h-6 w-6 text-white" />
+                <Mail className="h-5 w-5 md:h-6 md:w-6 text-white" />
               </a>
             </motion.div>
           </div>
@@ -230,7 +231,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 2.5 }}
-          className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute  bottom-8 sm:bottom-6 md:bottom-8  left-8/10 sm:left-1/2 sm:-translate-x-1/2"
         >
           <motion.button
             onClick={() => scrollToSection("about")}

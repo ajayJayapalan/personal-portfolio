@@ -80,7 +80,7 @@ export function Experience() {
 
   return (
     <section id="experience" className="py-17 sm:py-20 relative">
-      <div className="container mx-auto px-2  xs:px-4  sm:px-6">
+      <div className=" mx-auto px-2  xs:px-4  sm:px-6">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
@@ -115,7 +115,7 @@ export function Experience() {
                       index % 2 === 0 ? "md:pr-16" : "md:ml-auto md:pl-16"
                     }`}
                   >
-                    <div className="glass rounded-2xl p-3 xs:p-6 sm:p-8 hover:scale-105 transition-all duration-500 relative overflow-hidden">
+                    <div className="glass rounded-2xl p-3 xs:p-6 sm:p-8  transition-all duration-500 relative overflow-hidden">
                       {/* Gradient overlay */}
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-30 group-hover:opacity-50 transition-opacity`}

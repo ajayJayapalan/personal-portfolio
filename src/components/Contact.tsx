@@ -78,7 +78,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-17 sm:py-20 relative">
-      <div className="container mx-auto px-2  xs:px-4  sm:px-6">
+      <div className=" mx-auto px-2  xs:px-4  sm:px-6">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
@@ -117,7 +117,7 @@ export function Contact() {
                   <ScrollReveal key={index} delay={0.1 * index}>
                     <div
                       key={index}
-                      className="glass-hover cursor-pointer rounded-2xl p-3 sm:p-6 hover:scale-105 transition-all duration-300 group relative overflow-hidden"
+                      className="glass-hover cursor-pointer rounded-2xl p-3 sm:p-6  transition-all duration-300 group relative overflow-hidden"
                       onClick={() =>
                         link.href !== "#" && window.open(link.href, "_blank")
                       }
@@ -129,7 +129,7 @@ export function Contact() {
 
                       <div className="relative z-10">
                         <div className="flex items-center space-x-4">
-                          <div className="glass rounded-xl p-3 group-hover:scale-110 transition-transform">
+                          <div className="glass rounded-xl p-3  transition-transform">
                             <link.icon
                               className={`h-6 w-6 ${link.iconColor}`}
                             />
