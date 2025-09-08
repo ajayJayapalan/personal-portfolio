@@ -5,9 +5,9 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import emailjs from "@emailjs/browser";
 
-const SERVICE_KEY = process.env.REACT_APP_EMAILJS_SERVICE_ID; // Replace with your EmailJS service ID
-const TEMPLATE_KEY = process.env.REACT_APP_EMAILJS_TEMPLATE_ID; // Replace with your EmailJS template ID
-const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY; // Replace with your EmailJS public key
+const SERVICE_KEY = import.meta.env.VITE_EMAILJS_SERVICE_ID; // Replace with your EmailJS service ID
+const TEMPLATE_KEY = import.meta.env.VITE_EMAILJS_TEMPLATE_ID; // Replace with your EmailJS template ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY; // Replace with your EmailJS public key
 
 const SendMessage = () => {
   const [formData, setFormData] = useState({
