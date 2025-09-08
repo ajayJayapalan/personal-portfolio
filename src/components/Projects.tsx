@@ -73,7 +73,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="py-17 sm:py-20 relative">
-      <div className="container mx-auto px-2  xs:px-4  sm:px-6">
+      <div className="mx-auto px-2  xs:px-4  sm:px-6">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
