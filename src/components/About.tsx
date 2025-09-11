@@ -1,5 +1,6 @@
 import ScrollReveal from "./custom/ScrollReveal";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import developerImage from "../assets/ajay-jayapalan-software-engineer.jpg";
 
 export function About() {
   return (
@@ -87,7 +88,7 @@ export function About() {
                   <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square">
                     <div className="w-full h-full rounded-3xl overflow-hidden glass neon-glow">
                       <ImageWithFallback
-                        src="https://images.unsplash.com/photo-1555963153-11ff60182d08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTY4NDY5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                        src={developerImage}
                         alt="Ajay Jayapalan - React Developer"
                         className="w-full h-full object-cover"
                       />
