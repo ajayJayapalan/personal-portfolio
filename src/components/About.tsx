@@ -1,5 +1,6 @@
 import ScrollReveal from "./custom/ScrollReveal";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import developerImage from "../assets/ajay-jayapalan-software-engineer.jpg";
 
 export function About() {
   return (
@@ -87,17 +88,17 @@ export function About() {
                   <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square">
                     <div className="w-full h-full rounded-3xl overflow-hidden glass neon-glow">
                       <ImageWithFallback
-                        src="https://images.unsplash.com/photo-1555963153-11ff60182d08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTY4NDY5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                        src={developerImage}
                         alt="Ajay Jayapalan - React Developer"
                         className="w-full h-full object-cover"
                       />
                     </div>
 
                     {/* Floating neon elements */}
-                    <div className="absolute -top-6 -right-6 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-xl animate-pulse"></div>
-                    <div className="absolute -bottom-6 -left-6 w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-gradient-to-r from-blue-500/20 to-pink-500/20 rounded-2xl blur-xl animate-pulse delay-1000"></div>
+                    <div className="absolute -top-6 -right-6 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 bg-gradient-to-r from-cyan-500/20 to-cyan-500/35 rounded-2xl blur-xl  animate-pulse"></div>
+                    <div className="absolute -bottom-6 -left-6 w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-gradient-to-r from-blue-500/20 to-pink-500/35 rounded-2xl blur-xl animate-pulse [animation-delay:1000ms]"></div>
                     <div className="absolute top-1/2 -right-3 sm:-right-4 w-3 sm:w-4 h-3 sm:h-4 bg-cyan-400 rounded-full animate-ping"></div>
-                    <div className="absolute bottom-1/4 -left-3 sm:-left-4 w-2.5 sm:w-3 h-2.5 sm:h-3 bg-purple-400 rounded-full animate-ping delay-500"></div>
+                    <div className="absolute bottom-1/4 -left-3 sm:-left-4 w-2.5 sm:w-3 h-2.5 sm:h-3 bg-purple-400 rounded-full animate-ping [animation-delay:500ms]"></div>
                   </div>
                 </div>
               </div>

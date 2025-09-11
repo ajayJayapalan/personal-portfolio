@@ -111,74 +111,76 @@ export function Experience() {
                   {/* <ScrollLine /> */}
 
                   <div
-                    className={`ml-8  md:ml-0 md:w-1/2 ${
+                    className={`ml-8  md:ml-0 md:w-1/2  ${
                       index % 2 === 0 ? "md:pr-16" : "md:ml-auto md:pl-16"
                     }`}
                   >
-                    <div className="glass rounded-2xl p-3 xs:p-6 sm:p-8  transition-all duration-500 relative overflow-hidden">
-                      {/* Gradient overlay */}
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-30 group-hover:opacity-50 transition-opacity`}
-                      ></div>
+                    <div className=" before:bg-red-500/20">
+                      <div className="glass  rounded-2xl p-3 xs:p-6 sm:p-8  transition-all duration-500 relative overflow-hidden">
+                        {/* Gradient overlay */}
+                        <div
+                          className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-30 group-hover:opacity-50 transition-opacity`}
+                        ></div>
 
-                      <div className="relative z-10">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                          <div>
-                            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-1">
-                              {exp.title}
-                            </h3>
-                            <h3 className="text-xs sm:text-sm font-light text-white/60 mb-1">
-                              ~ {exp.subtitle}
-                            </h3>
+                        <div className="relative z-10">
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
+                            <div>
+                              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-1">
+                                {exp.title}
+                              </h3>
+                              <h3 className="text-xs sm:text-sm font-light text-white/60 mb-1">
+                                ~ {exp.subtitle}
+                              </h3>
+                            </div>
+                            <div className="text-center  md:text-left mt-2 sm:mt-0">
+                              <p className="text-sm text-white/70">
+                                {exp.period}
+                              </p>
+                              <Badge className="glass-hover px-3 py-1 text-xs text-cyan-400 border-cyan-400/30 bg-cyan-400/10 mt-1">
+                                {exp.type}
+                              </Badge>
+                            </div>
                           </div>
-                          <div className="text-center  md:text-left mt-2 sm:mt-0">
-                            <p className="text-sm text-white/70">
-                              {exp.period}
+
+                          <div className="flex items-center text-white/70 mb-2 xs:mb-4 gap-2">
+                            <p className=" text-cyan-400 font-medium">
+                              {exp.company},
                             </p>
-                            <Badge className="glass-hover px-3 py-1 text-xs text-cyan-400 border-cyan-400/30 bg-cyan-400/10 mt-1">
-                              {exp.type}
-                            </Badge>
+                            <p className="text-white/60 text-sm">
+                              {exp.location}
+                            </p>
                           </div>
-                        </div>
-
-                        <div className="flex items-center text-white/70 mb-2 xs:mb-4 gap-2">
-                          <p className=" text-cyan-400 font-medium">
-                            {exp.company},
+                          <p className="text-white/80 text-sm sm:text-base mb-4 xs:mb-6 leading-relaxed">
+                            {exp.description}
                           </p>
-                          <p className="text-white/60 text-sm">
-                            {exp.location}
-                          </p>
-                        </div>
-                        <p className="text-white/80 text-sm sm:text-base mb-4 xs:mb-6 leading-relaxed">
-                          {exp.description}
-                        </p>
 
-                        <div className="mb-6">
-                          <h4 className="font-semibold text-cyan-400 mb-3">
-                            Key Achievements:
-                          </h4>
-                          <ul className="space-y-2">
-                            {exp.achievements.map((achievement, achIndex) => (
-                              <li
-                                key={achIndex}
-                                className="text-xs sm:text-sm text-white/70 flex items-start"
+                          <div className="mb-6">
+                            <h4 className="font-semibold text-cyan-400 mb-3">
+                              Key Achievements:
+                            </h4>
+                            <ul className="space-y-2">
+                              {exp.achievements.map((achievement, achIndex) => (
+                                <li
+                                  key={achIndex}
+                                  className="text-xs sm:text-sm text-white/70 flex items-start"
+                                >
+                                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse"></div>
+                                  {achievement}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="flex flex-wrap gap-2">
+                            {exp.technologies.map((tech, techIndex) => (
+                              <Badge
+                                key={techIndex}
+                                className="glass-hover px-3 py-1 text-xs text-white/80 border-white/20 bg-white/10"
                               >
-                                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse"></div>
-                                {achievement}
-                              </li>
+                                {tech}
+                              </Badge>
                             ))}
-                          </ul>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2">
-                          {exp.technologies.map((tech, techIndex) => (
-                            <Badge
-                              key={techIndex}
-                              className="glass-hover px-3 py-1 text-xs text-white/80 border-white/20 bg-white/10"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
+                          </div>
                         </div>
                       </div>
                     </div>

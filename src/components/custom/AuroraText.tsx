@@ -5,12 +5,20 @@ const AuroraTextEffect = ({ children }) => {
     <div className="">
       <div className="relative">
         {/* Main text with aurora effect */}
-        <h1 className="aurora-text text-7xl sm:text-7xl md:text-8xl lg:text-9xl font-bold relative z-10">
-          {children}
-        </h1>
+        <div className="aurora-wrapper">
+          <h1 className="aurora-text" data-text="Ajay">
+            Ajay
+          </h1>
+        </div>
       </div>
 
       <style jsx>{`
+        .aurora-wrapper {
+          text-align: left;
+          position: relative;
+          /* Added padding to prevent clipping */
+        }
+
         .aurora-text {
           background: linear-gradient(
             45deg,
@@ -31,6 +39,7 @@ const AuroraTextEffect = ({ children }) => {
           color: transparent;
           animation: aurora-flow 18s linear infinite;
           position: relative;
+          line-height: 1.2;
         }
 
         /* Additional aurora layer for more depth */

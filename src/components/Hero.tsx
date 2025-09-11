@@ -152,7 +152,7 @@ export function Hero() {
                 transition={{ duration: 1.2, delay: 0.5 }}
               >
                 <motion.span
-                  className="block text-transparent bg-gradient-to-r from-cyan-400 via-sky-400 via-blue-400 via-indigo-400 to-purple-400 bg-clip-text"
+                  className="block text-7xl sm:text-7xl md:text-8xl lg:text-9xl"
                   transition={{
                     duration: 3,
                     repeat: Infinity,
@@ -234,13 +234,13 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 2.5 }}
-          className="absolute  bottom-8 sm:bottom-6 md:bottom-8  left-8/10 sm:left-1/2 sm:-translate-x-1/2"
+          className="absolute   z-100 bottom-8 sm:bottom-6 md:bottom-8  left-8/10 sm:left-1/2 sm:-translate-x-1/2"
         >
           <motion.button
-            onClick={() => scrollToSection("about")}
-            className="flex flex-col items-center text-white/50 hover:text-cyan-400 transition-all duration-300 group"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            onClick={() => {
+              scrollToSection("about");
+            }}
+            className="flex p-3 flex-col items-center text-white/50 hover:text-cyan-400 transition-all duration-300 group"
           >
             <span className="text-sm mb-1  group-hover:text-cyan-400">
               Scroll
