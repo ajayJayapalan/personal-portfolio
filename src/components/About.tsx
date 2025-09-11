@@ -95,10 +95,10 @@ export function About() {
                     </div>
 
                     {/* Floating neon elements */}
-                    <div className="absolute -top-6 -right-6 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-xl animate-pulse"></div>
-                    <div className="absolute -bottom-6 -left-6 w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-gradient-to-r from-blue-500/20 to-pink-500/20 rounded-2xl blur-xl animate-pulse delay-1000"></div>
+                    <div className="absolute -top-6 -right-6 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 bg-gradient-to-r from-cyan-500/20 to-cyan-500/35 rounded-2xl blur-xl  animate-pulse"></div>
+                    <div className="absolute -bottom-6 -left-6 w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-gradient-to-r from-blue-500/20 to-pink-500/35 rounded-2xl blur-xl animate-pulse [animation-delay:1000ms]"></div>
                     <div className="absolute top-1/2 -right-3 sm:-right-4 w-3 sm:w-4 h-3 sm:h-4 bg-cyan-400 rounded-full animate-ping"></div>
-                    <div className="absolute bottom-1/4 -left-3 sm:-left-4 w-2.5 sm:w-3 h-2.5 sm:h-3 bg-purple-400 rounded-full animate-ping delay-500"></div>
+                    <div className="absolute bottom-1/4 -left-3 sm:-left-4 w-2.5 sm:w-3 h-2.5 sm:h-3 bg-purple-400 rounded-full animate-ping [animation-delay:500ms]"></div>
                   </div>
                 </div>
               </div>

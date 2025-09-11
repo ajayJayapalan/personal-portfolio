@@ -112,8 +112,12 @@ export function Projects() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
                     {/* Floating neon elements */}
-                    <div className="absolute top-4 right-4 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-60"></div>
-                    <div className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400 rounded-full animate-ping delay-1000 opacity-60"></div>
+                    <div
+                      className={`absolute top-4 right-4 w-3 h-3 bg-cyan-400 rounded-full animate-ping [animation-delay:0ms] opacity-60`}
+                    ></div>
+                    <div
+                      className={`absolute bottom-4 left-4 w-2 h-2 bg-purple-400 rounded-full animate-ping [animation-delay:500ms] opacity-60`}
+                    ></div>
                   </div>
 
                   <div className="relative p-3 xs:p-6 sm:p-8 space-y-6">
