@@ -37,7 +37,7 @@ export function Contact() {
       label: "Location",
       value: "Kerala, India",
       href: "#",
-      description: "Available in Dubai",
+      description: "Open to opportunities",
       gradient: "from-pink-500/20 to-cyan-500/20",
       iconColor: "text-pink-400",
     },
@@ -129,7 +129,7 @@ export function Contact() {
                   <ul className="space-y-3 text-white/70 text-sm sm:text-base">
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                      Full-time React Developer positions
+                      Full-time React/Node Developer positions
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse delay-300"></div>
@@ -138,10 +138,6 @@ export function Contact() {
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse delay-700"></div>
                       Technical consulting
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse delay-1000"></div>
-                      Open source collaborations
                     </li>
                   </ul>
                 </div>

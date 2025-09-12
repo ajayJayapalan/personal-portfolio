@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function DynamicText({
   words = [
-    "React.js Developer;",
+    "Software Engineer;",
     "Three.js Enthusiast;",
     "Creative Thinker.",
     "Problem Solver.",
@@ -82,6 +82,7 @@ export default function DynamicText({
       style={{ display: "inline-block", verticalAlign: "bottom", ...style }}
       aria-live="polite"
     >
+      <span>I'm a </span>
       <span className="dynamic-text">{text}</span>
       <span className="dynamic-cursor" aria-hidden="true" />
 
