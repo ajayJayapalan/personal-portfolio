@@ -10,34 +10,36 @@ import { Badge } from "./ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import ScrollReveal from "./custom/ScrollReveal";
+import digitalTwinImage from "../assets/digitaltwin.jpg";
+import packageImage from "../assets/package.png";
+import healthtechImage from "../assets/healthtech.avif";
+import reelShowingImage from "../assets/reelshowingapp.png";
 
 export function Projects() {
   const projects = [
     {
-      title: "Enterprise 3D Viewer",
+      title: "Digital Twin Viewers for 3D & 2D Data",
       description:
-        "Developed dynamic viewers for IFC, SVG, and 3D models in React, enabling smooth visualization of complex datasets for enterprise tools.",
-      image:
-        "https://images.unsplash.com/photo-1665470909939-959569b20021?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTY4NDY5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080", // matching the first image in carousel
+        "Developed interactive digital twin viewers for IFC, SVG, and 3D models in React, enabling real-time visualization and analysis of complex datasets.",
+      image: digitalTwinImage,
       technologies: ["React", "TypeScript", "Three.js", "Tailwind CSS"],
       highlights: [
-        "Built scalable viewers for multiple 3D/2D data formats",
-        "Improved rendering performance with memoization and lazy loading",
-        "Enabled seamless integration into enterprise-level applications",
+        "Built scalable viewers supporting multiple 3D/2D data formats",
+        "Enhanced rendering performance with memoization and lazy loading",
+        "Enabled real-time updates and interactive visualization for digital twin applications",
       ],
       gradient: "from-cyan-500/20 to-blue-500/20",
     },
     {
-      title: "Reusable UI Component Library",
+      title: "Reusable Viewer Component Library",
       description:
-        "Engineered a React + TypeScript UI package bundled with Rollup, ensuring consistency and faster development across enterprise projects.",
-      image:
-        "https://images.unsplash.com/photo-1657256031812-4702fe316f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlLWNvbW1lcmNlJTIwd2Vic2l0ZSUyMGludGVyZmFjZXxlbnwxfHx8fDE3NTY4NzE4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      technologies: ["React", "TypeScript", "Rollup", "SCSS", "MUI"],
+        "Built a React + TypeScript component library for 2D/3D viewers, bundled with Rollup to provide consistent, high-performance visualization tools across enterprise projects.",
+      image: packageImage,
+      technologies: ["React", "TypeScript", "Three.js", "Rollup", "SCSS"],
       highlights: [
-        "Created a shared UI library used across multiple apps",
-        "Reduced duplication and improved developer productivity",
-        "Followed clean code and scalable architecture principles",
+        "Developed reusable viewer components supporting multiple data formats",
+        "Improved developer productivity and reduced redundancy across applications",
+        "Applied clean code and scalable architecture principles for maintainability",
       ],
       gradient: "from-purple-500/20 to-pink-500/20",
     },
@@ -45,12 +47,11 @@ export function Projects() {
       title: "Healthcare Booking Platform",
       description:
         "Launched a multi-city healthcare booking platform in React, enabling patients to find and book services quickly and easily.",
-      image:
-        "https://images.unsplash.com/photo-1651055693398-0d66969cf759?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXNrJTIwbWFuYWdlbWVudCUyMGFwcCUyMGludGVyZmFjZXxlbnwxfHx8fDE3NTY3ODczNDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      image: healthtechImage,
       technologies: ["React", "JavaScript", "REST APIs", "MongoDB"],
       highlights: [
         "Delivered MVP in one week for fast time-to-market",
-        "Used JSON-driven configs to generate dynamic routes",
+        "Built a JSON-driven system to generate dynamic surgery pages and routes, enabling easy addition of new variations with minimal development.",
         "Designed fully responsive UI for smooth patient experience",
       ],
       gradient: "from-blue-500/20 to-cyan-500/20",
@@ -59,9 +60,8 @@ export function Projects() {
       title: "Short Video Social App",
       description:
         "Built a TikTok-style short video app with scroll-based reel navigation and interactive UI for mobile platforms.",
-      image:
-        "https://images.unsplash.com/photo-1629697776809-f37ceac39e77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBtb2NrdXB8ZW58MXx8fHwxNzU2ODAyNTk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       technologies: ["React Native", "Redux", "Animations"],
+      image: reelShowingImage,
       highlights: [
         "Implemented smooth vertical reel navigation",
         "Created engaging UI components to boost interactivity",

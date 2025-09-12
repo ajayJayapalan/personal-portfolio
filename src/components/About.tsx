@@ -21,7 +21,7 @@ export function About() {
                 {/* Left Content */}
                 <div className="space-y-6">
                   <p className="text-base sm:text-lg text-white/80 leading-relaxed">
-                    Hi, I’m Ajay 👋 — a React developer with 4+ years of
+                    Hi, I’m Ajay 👋 — a Software Engineer with 4+ years of
                     experience building modern, scalable web applications. I
                     thrive on solving tough problems and turning them into
                     smooth, user-friendly experiences that people actually

@@ -77,6 +77,7 @@ export function Skills() {
         "JavaScript (ES6+)",
         "React Native",
         "Three.js",
+        "d3.js",
         "HTML5",
         "CSS3 / SCSS",
         "Tailwind CSS",
