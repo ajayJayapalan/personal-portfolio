@@ -190,7 +190,7 @@ export function Experience() {
             ))}
           </div>
 
-          <ScrollReveal delay={0.25}>
+          {/* <ScrollReveal delay={0.25}>
             <div className="text-center mt-16">
               <div className="glass rounded-2xl p-4 xs:p-6 sm:p-8 max-w-lg mx-auto">
                 <p className="text-white/70 mb-3 sm:mb-6">
@@ -217,7 +217,7 @@ export function Experience() {
                 </div>
               </div>
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
         </div>
       </div>
     </section>
