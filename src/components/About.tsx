@@ -21,31 +21,30 @@ export function About() {
                 {/* Left Content */}
                 <div className="space-y-6">
                   <p className="text-base sm:text-lg text-white/80 leading-relaxed">
+                    {" "}
                     Hi, I’m Ajay 👋 — a Software Engineer with 4+ years of
                     experience building modern, scalable web applications. I
-                    thrive on solving tough problems and turning them into
-                    smooth, user-friendly experiences that people actually
-                    enjoy. With a Computer Science background and projects
-                    ranging from startups to enterprise platforms, I’ve helped
-                    create products trusted by thousands of users.
-                  </p>
-
+                    love taking on complex challenges— whether it’s optimizing
+                    performance, handling heavy logic, or designing dynamic 3D
+                    viewers—and turning them into smooth, user-friendly
+                    solutions.{" "}
+                  </p>{" "}
                   <p className="text-base sm:text-lg text-white/80 leading-relaxed">
-                    I specialize in building applications that deal with heavy
-                    logic— whether it’s dynamic 3D viewers, complex data
-                    handling, or performance optimization. Writing clean,
-                    maintainable code that scales is my way of making sure the
-                    experience stays simple, no matter how complex things get
-                    under the hood.
-                  </p>
-
+                    {" "}
+                    My sweet spot is writing clean, maintainable code that’s
+                    fast, accessible, and responsive. From startups to
+                    enterprise platforms, I’ve worked on projects trusted by
+                    thousands of users, always making sure the tech behind the
+                    scenes feels effortless for the people using it.{" "}
+                  </p>{" "}
                   <p className="text-base sm:text-lg text-white/80 leading-relaxed">
-                    Outside of code, I explore 3D with Three.js, sketch
-                    realistic drawings, and dive into digital illustration. That
-                    creative side keeps me detail-focused, curious, and always
-                    looking for new ways to connect design with technology.
+                    {" "}
+                    Outside of work, you’ll probably find me tinkering with
+                    Three.js, sketching something realistic, or diving into
+                    digital illustration. That creative side keeps me
+                    detail-focused, curious, and always looking for fun ways to
+                    blend design with technology.{" "}
                   </p>
-
                   {/* Info Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-6">
                     <div className="glass rounded-xl p-3 sm:p-4">

@@ -90,7 +90,7 @@ export function Hero() {
       </motion.nav>
 
       {/* Mobile Nav (hamburger + sheet) */}
-      <div className="md:hidden  fixed top-4 right-4 z-50">
+      <div className="md:hidden  fixed top-4 right-4 z-100">
         <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
           <SheetTrigger asChild>
             <motion.button
