@@ -68,7 +68,7 @@ function SheetContent({
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className={cn(
-            "fixed z-50 flex flex-col gap-4 bg-background shadow-lg",
+            "fixed z-100 flex flex-col gap-4 bg-background shadow-lg",
             side === "left" &&
               "inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm",
             side === "right" &&
