@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Lock } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import ScrollReveal from "./custom/ScrollReveal";
 import digitalTwinImage from "../assets/digitaltwin.jpg";
@@ -18,54 +18,94 @@ import reelShowingImage from "../assets/reelshowingapp.png";
 export function Projects() {
   const projects = [
     {
-      title: "Digital Twin Viewers for 3D & 2D Data",
+      title: "Digital Twin Viewers",
       description:
-        "Developed interactive digital twin viewers for IFC, SVG, and 3D models in React, enabling real-time visualization and analysis of complex datasets.",
+        "Created interactive viewers for IFC, SVG, and 3D models using React and TypeScript, enabling real-time visualization, analysis and seamless integration of complex model/data formats.",
       image: digitalTwinImage,
-      technologies: ["React", "TypeScript", "Three.js", "Tailwind CSS"],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Rematch Redux",
+        "Three.js",
+        "nats.io",
+        "Tailwind CSS",
+        "Unity Game Engine",
+      ],
       highlights: [
-        "Built scalable viewers supporting multiple 3D/2D data formats",
-        "Enhanced rendering performance with memoization and lazy loading",
-        "Enabled real-time updates and interactive visualization for digital twin applications",
+        "Engineered support for multiple data formats (IFC, SVG, glTF/other 3D) with format-specific loaders and parsers",
+        "Optimized rendering performance via memoization, lazy & incremental loading, level-of-detail (LOD), and geometry simplification techniques",
+        "Implemented real-time updates and interactive visualization for digital twin applications, including sensor data overlays and dynamic state changes",
+        "Handled large model size by employing progressive loading, visibility/occlusion culling, and cleanup of unused geometries/textures",
       ],
       gradient: "from-cyan-500/20 to-blue-500/20",
+      demoUrl: "https://www.thingspine.com/",
     },
     {
-      title: "Reusable Viewer Component Library",
+      title: "Internal Reusable Viewer Component Library",
       description:
-        "Built a React + TypeScript component library for 2D/3D viewers, bundled with Rollup to provide consistent, high-performance visualization tools across enterprise projects.",
+        "Created a private React + TypeScript package consisting of 2D/3D viewer components (SVG, IFC, glTF etc.), bundled via Rollup, for consistent, high-performance visualization across multiple enterprise applications.",
       image: packageImage,
-      technologies: ["React", "TypeScript", "Three.js", "Rollup", "SCSS"],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Three.js",
+        "d3.js",
+        "WASM",
+        "Web Workers",
+        "Rollup",
+        "Vite",
+      ],
       highlights: [
-        "Developed reusable viewer components supporting multiple data formats",
-        "Improved developer productivity and reduced redundancy across applications",
-        "Applied clean code and scalable architecture principles for maintainability",
+        "Designed reusable viewer components that support a range of data formats (IFC, SVG, 3D glTF-like formats) to avoid duplication in downstream apps",
+        "Improved developer productivity & code consistency by enabling multiple teams to use the same library instead of rewriting similar viewer logic",
+        "Applied scalable architecture and clean-code practices: modular component boundaries, strong typing, themes/style isolation to ensure maintainability",
+        "Optimized bundle size and load performance using Rollup for tree-shaking, code splitting, and lazy loading of heavy viewer internals",
       ],
       gradient: "from-purple-500/20 to-pink-500/20",
     },
     {
-      title: "Healthcare Booking Platform",
+      title: "Multi-City Healthcare Booking Platform",
       description:
-        "Launched a multi-city healthcare booking platform in React, enabling patients to find and book services quickly and easily.",
+        "Built a scalable healthcare booking app using React, enabling patients in multiple cities to quickly discover and schedule medical or surgical services.",
       image: healthtechImage,
-      technologies: ["React", "JavaScript", "REST APIs", "MongoDB"],
+      technologies: [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "SCSS",
+        "Styled Components",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+      ],
       highlights: [
-        "Delivered MVP in one week for fast time-to-market",
-        "Built a JSON-driven system to generate dynamic surgery pages and routes, enabling easy addition of new variations with minimal development.",
-        "Designed fully responsive UI for smooth patient experience",
+        "Launched MVP in just **one week**, accelerating time-to-market and enabling early feedback loops",
+        "Developed a JSON-driven content & routing engine to auto-generate surgery-specific pages, allowing new service variations to be added with minimal engineering effort",
+        "Designed and implemented a fully responsive UI to deliver seamless patient experience across mobile, tablet, and desktop",
       ],
       gradient: "from-blue-500/20 to-cyan-500/20",
+      demoUrl: "https://mykarehealth.com/plan-your-surgery",
     },
     {
-      title: "Short Video Social App",
+      title: "Short Video Social App MVP",
       description:
-        "Built a TikTok-style short video app with scroll-based reel navigation and interactive UI for mobile platforms.",
-      technologies: ["React Native", "Redux", "Animations"],
+        "Built a TikTok-style short video app with smooth scroll-based reel navigation, immersive interactive UI, and server-backed media handling for mobile platforms.",
+      technologies: [
+        "React Native",
+        "Expo",
+        "Redux",
+        "Reanimated",
+        "Node.js",
+        "MongoDB",
+        "Google Cloud Storage",
+        "React Query / TanStack Query",
+      ],
       image: reelShowingImage,
       highlights: [
-        "Implemented smooth vertical reel navigation",
-        "Created engaging UI components to boost interactivity",
-        "Optimized performance for mobile responsiveness",
+        "Implemented smooth vertical reel navigation with optimized lists and touch-responsive UI components using Reanimated for fluid performance",
+        "Integrated backend media handling: video upload, adaptive bitrate transcoding, cloud storage, and CDN delivery for low-latency streaming",
+        "Optimized mobile performance with adaptive video quality, smart caching (React Query), lazy loading, and profiling to maintain stable frame rates on lower-end devices",
       ],
       gradient: "from-pink-500/20 to-purple-500/20",
     },
@@ -91,7 +131,7 @@ export function Projects() {
             </p>
           </ScrollReveal>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8  ">
             {projects.map((project, index) => (
               <ScrollReveal key={index} delay={0.2 * index}>
                 <div
@@ -158,29 +198,48 @@ export function Projects() {
                       </ul>
                     </div>
 
-                    {/* <div className="flex gap-3 pt-4">
-                      <Button
-                        size="sm"
-                        className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-semibold neon-glow transition-all duration-300 border-0"
-                        onClick={() => window.open(project.demoUrl, "_blank")}
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Live Demo
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="glass-hover neon-border text-cyan-400 hover:text-cyan-300 bg-transparent"
-                        onClick={() => window.open(project.codeUrl, "_blank")}
-                      >
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </Button>
-                    </div> */}
+                    {project?.demoUrl ? (
+                      <div className="flex gap-3 pt-4">
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-semibold neon-glow transition-all duration-300 border-0"
+                          onClick={() => window.open(project.demoUrl, "_blank")}
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Live
+                        </Button>
+                      </div>
+                    ) : (
+                      <div className="flex gap-3 pt-4">
+                        <Button
+                          size="sm"
+                          disabled
+                          className="bg-gradient-to-r from-gray-300 to-gray-400 text-black font-semibold cursor-not-allowed opacity-70 border-0"
+                        >
+                          <Lock className="h-4 w-4 mr-2" />
+                          Private Repo
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+          <div className="flex justify-end">
+            <span
+              role="button"
+              aria-label="View more projects on GitHub"
+              onClick={() =>
+                window.open(
+                  "https://github.com/ajayJayapalan?tab=repositories",
+                  "_blank"
+                )
+              }
+              className="inline-block text-sm p-5 m-5 text-white/75 underline decoration-1 underline-offset-2 italic tracking-wider cursor-pointer hover:text-white text-right"
+            >
+              see more..
+            </span>
           </div>
 
           {/* <ScrollReveal>
