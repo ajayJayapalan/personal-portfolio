@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 
 const AvailableMarquee = () => {
-  const text = "• Open to work • Available in Dubai ";
+  const text = "• Open to work • Available in UAE ";
 
   return (
     <motion.div
