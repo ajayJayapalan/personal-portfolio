@@ -35,7 +35,7 @@ export function Contact() {
     {
       icon: MapPin,
       label: "Location",
-      value: "Kerala, India",
+      value: "Dubai, UAE",
       href: "#",
       description: "Open to opportunities",
       gradient: "from-pink-500/20 to-cyan-500/20",

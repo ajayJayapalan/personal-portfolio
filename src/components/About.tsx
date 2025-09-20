@@ -52,7 +52,7 @@ export function About() {
                         Based in
                       </h3>
                       <p className="text-white/70 text-sm sm:text-base">
-                        Kerala, India
+                        Dubai, UAE
                       </p>
                     </div>
                     <div className="glass rounded-xl p-3 sm:p-4">

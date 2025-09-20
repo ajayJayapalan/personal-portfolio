@@ -117,7 +117,7 @@ export function Footer() {
                 <div className="space-y-2 text-white/70 mb-6">
                   <p className="flex text-sm sm:text-base items-center justify-center md:justify-start">
                     <MapPin className="h-4 w-4 mr-2 text-pink-400" />
-                    Kerala, India
+                    Dubai, UAE
                   </p>
                   <p className="flex text-sm sm:text-base items-center justify-center md:justify-start">
                     <Mail className="h-4 w-4 mr-2 text-cyan-400" />
