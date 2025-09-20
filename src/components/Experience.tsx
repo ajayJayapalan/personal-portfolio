@@ -3,6 +3,7 @@ import ScrollReveal from "./custom/ScrollReveal";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { motion, useScroll, useTransform } from "motion/react";
+import resume from "../assets/Ajay_Jayapalan_Software_Engineer_UAE.pdf";
 
 export function Experience() {
   const experiences = [
@@ -77,6 +78,15 @@ export function Experience() {
     // offset controls when progress starts/stops (explained below)
     offset: ["start end", "end start"],
   });
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = resume;
+    link.download = "Ajay_Jayapalan_Software_Engineer_UAE.pdf"; // file name for download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="experience" className="py-17 sm:py-20 relative">
@@ -190,7 +200,7 @@ export function Experience() {
             ))}
           </div>
 
-          {/* <ScrollReveal delay={0.25}>
+          <ScrollReveal delay={0.25}>
             <div className="text-center mt-16">
               <div className="glass rounded-2xl p-4 xs:p-6 sm:p-8 max-w-lg mx-auto">
                 <p className="text-white/70 mb-3 sm:mb-6">
@@ -198,7 +208,7 @@ export function Experience() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Button
-                    onClick={() => window.open("/resume.pdf", "_blank")}
+                    onClick={handleDownload}
                     className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-semibold neon-glow transition-all duration-300 border-0"
                   >
                     Download Resume
@@ -217,7 +227,7 @@ export function Experience() {
                 </div>
               </div>
             </div>
-          </ScrollReveal> */}
+          </ScrollReveal>
         </div>
       </div>
     </section>
