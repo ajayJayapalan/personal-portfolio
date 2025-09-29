@@ -22,8 +22,8 @@ export function Footer() {
                   <span className="text-white"> Jayapalan</span>
                 </h3>
                 <p className="text-white/70 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
-                  Software Engineer focused on building scalable applications
-                  and seamless user experiences with modern web technologies.
+                  React Developer focused on building scalable applications and
+                  seamless user experiences with modern web technologies.
                 </p>
                 <div className="flex justify-center md:justify-start space-x-6">
                   <a

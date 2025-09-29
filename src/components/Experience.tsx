@@ -3,12 +3,12 @@ import ScrollReveal from "./custom/ScrollReveal";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { motion, useScroll, useTransform } from "motion/react";
-import resume from "../assets/Ajay_Jayapalan_Software_Engineer_UAE.pdf";
+import resume from "../assets/AJAY_JAYAPALAN_RESUME.pdf";
 
 export function Experience() {
   const experiences = [
     {
-      title: "Software Engineer",
+      title: "React Developer",
       subtitle: "React JS, IoT, Digital Twin",
       company: "Toobler Technologies",
       location: "Infopark, Kochi, India",
@@ -39,7 +39,7 @@ export function Experience() {
       gradient: "from-cyan-500/20 to-blue-500/20",
     },
     {
-      title: "Jr. Software Engineer",
+      title: "Jr. React Developer",
       subtitle: "React JS, React Native",
       company: "Mykare Health Technologies",
       location: "KSUM, Kalamassery, India",

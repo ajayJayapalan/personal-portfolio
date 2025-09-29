@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 export default function DynamicText({
   words = [
+    "React.js Developer;",
     "Software Engineer;",
-    "Three.js Enthusiast;",
     "Creative Thinker.",
     "Problem Solver.",
   ],
