@@ -169,7 +169,7 @@ export function Skills() {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="text-center text-white/70 mb-8 xs:mb-10 sm:mb-16 max-w-2xl mx-auto">
-              A comprehensive toolkit built through 4+ years of hands-on
+              A comprehensive toolkit built through 5 years of hands-on
               development experience and continuous learning.
             </p>
           </ScrollReveal>

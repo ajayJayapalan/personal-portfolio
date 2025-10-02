@@ -22,7 +22,7 @@ export function About() {
                 <div className="space-y-6">
                   <p className="text-base sm:text-lg text-white/80 leading-relaxed">
                     {" "}
-                    Hi, I’m Ajay 👋 — a Frontend Engineer with 4+ years of
+                    Hi, I’m Ajay 👋 — a Frontend Engineer with 5 years of
                     experience building modern, scalable web applications. I
                     love taking on complex challenges— whether it’s optimizing
                     performance, handling heavy logic, or designing dynamic 3D
@@ -60,7 +60,7 @@ export function About() {
                         Experience
                       </h3>
                       <p className="text-white/70 text-sm sm:text-base">
-                        4+ Years
+                        5 Years
                       </p>
                     </div>
                     <div className="glass rounded-xl p-3 sm:p-4">
