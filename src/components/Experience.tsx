@@ -102,9 +102,9 @@ export function Experience() {
           </ScrollReveal>
           <ScrollReveal>
             <p className="text-center text-white/70 mb-8 xs:mb-10 sm:mb-16 max-w-2xl mx-auto">
-              4+ years of progressive growth in frontend development, from
-              intern to senior developer, with a track record of delivering
-              impactful solutions.
+              5 years of progressive growth in frontend development, from intern
+              to senior developer, with a track record of delivering impactful
+              solutions.
             </p>
           </ScrollReveal>
 
