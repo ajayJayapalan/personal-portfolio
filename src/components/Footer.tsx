@@ -41,7 +41,7 @@ export function Footer() {
                     <Linkedin className="h-5 w-5  transition-transform" />
                   </a>
                   <a
-                    href="mailto:ajai.jayapalan@gmail.com"
+                    href="mailto:ajayjayapalan.dev@gmail.com"
                     className="glass rounded-full p-3 text-white/70 hover:text-purple-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] group"
                     aria-label="Email"
                   >
@@ -117,11 +117,11 @@ export function Footer() {
                 <div className="space-y-2 text-white/70 mb-6">
                   <p className="flex text-sm sm:text-base items-center justify-center md:justify-start">
                     <MapPin className="h-4 w-4 mr-2 text-pink-400" />
-                    Dubai, UAE
+                    Kerala, India
                   </p>
                   <p className="flex text-sm sm:text-base items-center justify-center md:justify-start">
                     <Mail className="h-4 w-4 mr-2 text-cyan-400" />
-                    ajai.jayapalan@gmail.com
+                    ajayjayapalan.dev@gmail.com
                   </p>
                   <p className="flex text-sm sm:text-base items-center justify-center md:justify-start">
                     <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>

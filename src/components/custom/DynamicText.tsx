@@ -1,12 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function DynamicText({
-  words = [
-    "React.js Developer;",
-    "Software Engineer;",
-    "Creative Thinker.",
-    "Problem Solver.",
-  ],
+  words = ["FullStack Engineer;", "Creative Thinker.", "Problem Solver."],
   typingSpeed = 100,
   deletingSpeed = 30,
   pauseBetweenWords = 1500,

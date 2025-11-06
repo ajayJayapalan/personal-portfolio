@@ -14,6 +14,8 @@ import digitalTwinImage from "../assets/digitaltwin.jpg";
 import packageImage from "../assets/package.png";
 import healthtechImage from "../assets/healthtech.avif";
 import reelShowingImage from "../assets/reelshowingapp.png";
+import rcMarketImage from "../assets/rc-market.png";
+import theWebMaverickImage from "../assets/thewebmaverick.png";
 
 export function Projects() {
   const projects = [
@@ -39,6 +41,50 @@ export function Projects() {
       ],
       gradient: "from-cyan-500/20 to-blue-500/20",
       demoUrl: "https://www.thingspine.com/",
+    },
+    {
+      title: "RC Market",
+      description:
+        "Built a marketplace platform for posting and managing ads using Next.js and TypeScript, featuring dynamic filters, robust form validation, and responsive UI for smooth cross-device experience.",
+      image: rcMarketImage,
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tanstack Query",
+        "Zustand",
+        "Tailwind CSS",
+        "React Hook Form",
+        "Zod",
+      ],
+      highlights: [
+        "Built ad posting and management workflows with form validation using React Hook Form and Zod, ensuring robust input handling and clean UX",
+        "Integrated dynamic category, brand, and model dropdowns with Zustand for efficient global state management",
+        "Implemented image upload, preview, and edit features with optimized client-side caching using Tanstack Query",
+        "Created responsive UI components and filters with Tailwind CSS for smooth navigation and consistent visual hierarchy across devices",
+      ],
+      gradient: "from-cyan-500/20 to-blue-500/20",
+      demoUrl: "https://rcmarketspace-user.lupinarylabs.xyz/",
+    },
+    {
+      title: "The Web Maverick",
+      description:
+        "Built a collection of free micro-SaaS tools for web designers and developers, offering utilities like color theory generators, gradient builders, and CSS effect creators under a unified brand.",
+      image: theWebMaverickImage,
+      technologies: [
+        "Next.js",
+        "Shadcn UI",
+        "Tailwind CSS",
+        "Lucide-react",
+        "Framer Motion",
+      ],
+      highlights: [
+        "Designed modular Next.js architecture to host multiple micro-tools under a single scalable platform",
+        "Developed CSS and color utilities including shade/tint generator, gradient builder, and box-shadow designer",
+        "Implemented responsive, minimal UI using Shadcn UI and Tailwind for a cohesive design experience",
+        "Optimized SEO and ad-ready metadata for organic traffic growth and monetization readiness",
+      ],
+      gradient: "from-cyan-500/20 to-blue-500/20",
+      demoUrl: "https://www.thewebmaverick.com/",
     },
     {
       title: "Internal Reusable Viewer Component Library",

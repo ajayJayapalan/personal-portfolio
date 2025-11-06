@@ -183,7 +183,7 @@ export function Hero() {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a
-                href="mailto:ajai.jayapalan@example.com"
+                href="mailto:ajayjayapalan.dev@example.com"
                 className="glass rounded-full p-4 text-white/70 hover:text-purple-400 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] group hover:scale-110"
                 aria-label="Email"
               >
