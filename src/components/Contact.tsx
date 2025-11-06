@@ -1,5 +1,4 @@
 import { Mail, Github, Linkedin, MapPin, Phone } from "lucide-react";
-import { useState } from "react";
 import ScrollReveal from "./custom/ScrollReveal";
 import SendMessage from "./custom/SendMessage";
 
@@ -8,8 +7,8 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "ajai.jayapalan@gmail.com",
-      href: "mailto:ajai.jayapalan@gmail.com",
+      value: "ajayjayapalan.dev@gmail.com",
+      href: "mailto:ajayjayapalan.dev@gmail.com",
       description: "Drop me a line anytime",
       gradient: "from-cyan-500/20 to-blue-500/20",
       iconColor: "text-cyan-400",
@@ -35,7 +34,7 @@ export function Contact() {
     {
       icon: MapPin,
       label: "Location",
-      value: "Dubai, UAE",
+      value: "Kerala, India",
       href: "#",
       description: "Open to opportunities",
       gradient: "from-pink-500/20 to-cyan-500/20",

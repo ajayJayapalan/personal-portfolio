@@ -208,19 +208,22 @@ export function Hero() {
               className="mt-6 sm:mt-10 flex justify-start md:justify-start space-x-4 sm:space-x-6"
             >
               <a
+                target="_blank"
                 href="https://github.com/ajayJayapalan"
                 className="p-4 md:p-5 rounded-full bg-white/10 hover:bg-cyan-500/20 transition"
               >
                 <Github className="h-5 w-5 md:h-6 md:w-6 text-white" />
               </a>
               <a
+                target="_blank"
                 href="https://linkedin.com/in/ajay-jayapalan-b4364a1b5/"
                 className="p-4 md:p-5 rounded-full bg-white/10 hover:bg-blue-500/20 transition"
               >
                 <Linkedin className="h-5 w-5 md:h-6 md:w-6 text-white" />
               </a>
               <a
-                href="mailto:ajai.jayapalan@example.com"
+                target="_blank"
+                href="mailto:ajayjayapalan.dev@gmail.com"
                 className="p-4 md:p-5 rounded-full bg-white/10 hover:bg-purple-500/20 transition"
               >
                 <Mail className="h-5 w-5 md:h-6 md:w-6 text-white" />
